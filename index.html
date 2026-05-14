@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BulletWork</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f9fafb;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-lg: 0 4px 24px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 80px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo span {
+      color: var(--accent);
+    }
+    .subtitle {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* Main card */
+    .container {
+      width: 100%;
+      max-width: 680px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 180px;
+      padding: 18px 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      line-height: 1.6;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      background: var(--bg);
+    }
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    textarea::placeholder {
+      color: #9ca3af;
+    }
+
+    /* Example tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: var(--text-secondary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      user-select: none;
+    }
+    .tag:hover {
+      background: #eff6ff;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Privacy note */
+    .privacy-note {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, opacity 0.2s;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      width: 100%;
+      margin-top: 16px;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-outline {
+      background: var(--bg);
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+    }
+    .btn-outline:hover {
+      background: #eff6ff;
+    }
+
+    /* Result area */
+    .result {
+      display: none;
+      margin-top: 28px;
+      padding: 24px 28px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      line-height: 1.75;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .result.visible { display: block; }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .result-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Loading spinner */
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid #d1d5db;
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .btn-content { display: flex; align-items: center; gap: 8px; }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f2937;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1000;
+    }
+    .toast.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Error */
+    .error-msg {
+      margin-top: 12px;
+      padding: 12px 16px;
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      display: none;
+    }
+    .error-msg.visible { display: block; }
+
+    /* Footer */
+    .footer {
+      margin-top: 64px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Bullet<span>Work</span></div>
+    <p class="subtitle">Turn messy thoughts into a clean weekly report. Powered by AI.</p>
+  </div>
+
+  <div class="container">
+    <div class="tags">
+      <span class="tag" onclick="appendTag('Meeting')">Meeting</span>
+      <span class="tag" onclick="appendTag('Customer complaint')">Customer complaint</span>
+      <span class="tag" onclick="appendTag('Product docs')">Product docs</span>
+      <span class="tag" onclick="appendTag('Interview')">Interview</span>
+      <span class="tag" onclick="appendTag('Training')">Training</span>
+    </div>
+    <textarea id="inputBox" maxlength="3000" placeholder="Drop your messy thoughts from the week in here. I'll handle the rest.&#10;&#10;e.g. Product review on Monday, fixed the login bug on Wednesday, user interviews on Friday..."></textarea>
+
+   <p class="privacy-note">We don't store your data. Processed securely via API.</p>
+
+<button class="btn btn-primary" id="generateBtn" onclick="generateWeeklyReport()">
+    <span class="btn-content">
+        <span id="btnText">Generate Report</span>
+        <span class="spinner" id="spinner"></span>
+    </span>
+</button>
+
+<a href="https://stripe.com/placeholder" class="btn btn-coffee" style="background-color: #6b7280; margin-top: 12px;">Buy me a coffee ☕ ($3)</a>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="result" id="resultArea">
+      <div class="result-header">
+        <span class="result-label">Weekly Report</span>
+        <div>
+          <button class="btn btn-outline" id="editBtn" onclick="toggleEdit()" style="margin:0;width:auto;padding:6px 16px;font-size:0.8rem;">Edit</button>
+          <button class="btn btn-outline" onclick="copyResult()" style="margin:0;width:auto;padding:6px 16px;font-size:0.8rem;">Copy</button>
+        </div>
+      </div>
+      <div id="resultContent"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <p style="text-align:center;font-size:0.85rem;color:#9ca3af;margin-top:48px;">Built by an indie developer for remote workers.</p>
+  <footer class="footer">
+    <p>&copy; 2026 BulletWork</p>
+    <p><a href="mailto:hello@bulletwork.so">hello@bulletwork.so</a></p>
+  </footer>
+
+  <script>
+    const API_KEY = 'abc';
+    const MODEL = 'deepseek-chat';
+
+    function appendTag(tag) {
+      var input = document.getElementById('inputBox');
+      var current = input.value.trim();
+      input.value = current ? current + ' ' + tag : tag;
+      input.focus();
+    }
+
+    function showError(msg) {
+      const el = document.getElementById('errorMsg');
+      el.textContent = msg;
+      el.classList.add('visible');
+    }
+
+    function hideError() {
+      document.getElementById('errorMsg').classList.remove('visible');
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(function () { t.classList.remove('show'); }, 1500);
+    }
+
+    function setLoading(loading) {
+      const btn = document.getElementById('generateBtn');
+      const spinner = document.getElementById('spinner');
+      const btnText = document.getElementById('btnText');
+      btn.disabled = loading;
+      spinner.style.display = loading ? 'block' : 'none';
+      btnText.textContent = loading ? 'Generating...' : 'Generate Report';
+    }
+
+    async function generateWeeklyReport() {
+      hideError();
+      const input = document.getElementById('inputBox').value.trim();
+      if (!input) {
+        showError('Please enter some thoughts about your week first.');
+        return;
+      }
+
+      setLoading(true);
+      document.getElementById('resultArea').classList.remove('visible');
+
+      const prompt = [
+        'You are a professional weekly report assistant. Organize the user\'s scattered thoughts below into a structured English bullet-point weekly report.',
+        '',
+        'Requirements:',
+        '- Output in professional, concise English suitable for a SaaS team.',
+        '- Group by category (e.g. Accomplishments / In Progress / Challenges / Next Week). Use • bullets under each category.',
+        '- Extract key points from the input, merge similar items, remove redundancy.',
+        '- Keep each bullet short and impactful, 1-2 lines each.',
+        '- Preserve any specific dates, names, or project names the user mentioned.',
+        '- Use "Weekly Report" as the title. Do not use placeholder text like "[Your Name]".',
+        '',
+        'User input:',
+        input
+      ].join('\n');
+
+      try {
+        const resp = await fetch('https://glq-api.asia/deepseek/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + API_KEY
+          },
+          body: JSON.stringify({
+            model: MODEL,
+            messages: [
+              { role: 'system', content: 'CRITICAL: DO NOT use any markdown formatting. No asterisks, no hashes, no underscores. Output MUST be plain text only using dashes for bullet points. You are a professional weekly report assistant. Organize the user\'s scattered input into a structured bullet-point weekly report using professional business English. Title the report "Weekly Report". Do not use placeholder text like "[Your Name]". Keep it readable and well-structured.' },
+              { role: 'user', content: prompt }
+            ],
+            temperature: 0.7,
+            max_tokens: 2048
+          })
+        });
+
+        if (!resp.ok) {
+          var friendlyMsg = resp.status === 429
+            ? 'Too many requests. Please wait a moment and try again.'
+            : resp.status === 401 || resp.status === 403
+              ? 'Authentication failed. Please check your API key.'
+              : resp.status >= 500
+                ? 'The AI service is temporarily unavailable. Please try again in a few minutes.'
+                : 'Something went wrong while generating your report. Please try again.';
+          showError(friendlyMsg);
+          setLoading(false);
+          return;
+        }
+
+        var data = JSON.parse(await resp.text());
+        var content = data.choices && data.choices[0] && data.choices[0].message
+          ? data.choices[0].message.content
+          : '';
+
+        if (!content) throw new Error('The AI returned an empty response. Please try again.');
+
+        document.getElementById('resultContent').textContent = content;
+        document.getElementById('resultArea').classList.add('visible');
+      } catch (e) {
+        var errMsg = e.message || 'Unknown error';
+        showError('Failed to generate report: ' + errMsg.charAt(0).toLowerCase() + errMsg.slice(1));
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    async function copyResult() {
+      var text = document.getElementById('resultContent').innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        showToast('Copied to clipboard!');
+      } catch (_) {
+        // Fallback for older browsers
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('Copied to clipboard!');
+      }
+    }
+
+    var isEditing = false;
+
+    function toggleEdit() {
+      var contentEl = document.getElementById('resultContent');
+      var btn = document.getElementById('editBtn');
+      if (!isEditing) {
+        // Enter edit mode
+        var text = contentEl.textContent;
+        contentEl.innerHTML = '<textarea id="editTextarea" style="width:100%;min-height:300px;padding:12px 16px;font-size:0.95rem;font-family:inherit;line-height:1.75;border:1.5px solid var(--border);border-radius:8px;resize:vertical;outline:none;background:var(--bg);"></textarea>';
+        document.getElementById('editTextarea').value = text;
+        btn.textContent = 'Done';
+        isEditing = true;
+      } else {
+        // Exit edit mode
+        var newText = document.getElementById('editTextarea').value;
+        contentEl.textContent = newText;
+        btn.textContent = 'Edit';
+        isEditing = false;
+      }
+    }
+  </script>
+</body>
+</html>
