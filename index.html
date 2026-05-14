@@ -265,14 +265,16 @@
 
    <p class="privacy-note">We don't store your data. Processed securely via API.</p>
 
-<button class="btn btn-primary" id="generateBtn" onclick="generateWeeklyReport()">
-    <span class="btn-content">
-        <span id="btnText">Generate Report</span>
-        <span class="spinner" id="spinner"></span>
-    </span>
-</button>
+<div style="display: flex; gap: 12px; margin-top: 16px;">
+  <button class="btn btn-primary" id="generateBtn" onclick="generateWeeklyReport()" style="flex: 1; margin-top: 0;">
+      <span class="btn-content">
+          <span id="btnText">Generate Report</span>
+          <span class="spinner" id="spinner"></span>
+      </span>
+  </button>
 
-<a href="https://stripe.com/placeholder" class="btn btn-coffee" style="background-color: #6b7280; margin-top: 12px;">Buy me a coffee ☕ ($3)</a>
+  <a href="https://stripe.com/placeholder" class="btn btn-outline" style="white-space: nowrap;">Buy me a coffee ☕ ($3)</a>
+</div>
 
     <div class="error-msg" id="errorMsg"></div>
 
