@@ -273,7 +273,26 @@
       </span>
   </button>
 
-  <a href="https://stripe.com/placeholder" class="btn btn-outline" style="white-space: nowrap;">Buy me a coffee ☕ ($3)</a>
+  <div id="paypal-button-container-P-8LV38194UT653264XNIDPJ2A"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=AT9-xHOs7TRV2sUpHQ0sw6VUmz9zoOU-eA4nEJFE6c0093jeH_mvlY5nB9fwE9K90ehjh-KwuKn9b8j2&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'subscribe'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          plan_id: 'P-8LV38194UT653264XNIDPJ2A'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+      }
+  }).render('#paypal-button-container-P-8LV38194UT653264XNIDPJ2A');
+</script>
 </div>
 
     <div class="error-msg" id="errorMsg"></div>
