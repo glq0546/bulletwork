@@ -263,7 +263,7 @@
     </div>
     <textarea id="inputBox" maxlength="3000" placeholder="Drop your messy thoughts from the week in here. I'll handle the rest.&#10;&#10;e.g. Product review on Monday, fixed the login bug on Wednesday, user interviews on Friday..."></textarea>
 
-   <p class="privacy-note">We don't store your data. Processed securely via API.</p>
+   <p class="privacy-note">Your input is transmitted securely to our AI provider for processing. We do not actively store your data on our own servers.</p>
 
 <div style="display: flex; gap: 12px; margin-top: 16px;">
   <button class="btn btn-primary" id="generateBtn" onclick="generateWeeklyReport()" style="flex: 1; margin-top: 0;">
@@ -317,7 +317,7 @@
   </footer>
 
   <script>
-    const API_KEY = 'abc';
+    
     const MODEL = 'deepseek-chat';
 
     function appendTag(tag) {
