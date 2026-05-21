@@ -229,6 +229,71 @@
     }
     .error-msg.visible { display: block; }
 
+    /* Before / After example */
+    .example-section {
+      margin-top: 40px;
+      width: 100%;
+    }
+    .example-section-title {
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .example-boxes {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .example-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .example-box h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .example-box.before h3 { color: #9ca3af; }
+    .example-box.after h3 { color: var(--accent); }
+    .example-box .content {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: inherit;
+    }
+    .example-box.before .content {
+      color: var(--text-secondary);
+    }
+    .example-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--accent);
+      padding: 0 4px;
+    }
+    @media (max-width: 640px) {
+      .example-boxes {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .example-arrow {
+        transform: rotate(90deg);
+        padding: 4px 0;
+      }
+    }
+
     /* Footer */
     .footer {
       margin-top: 64px;
@@ -306,6 +371,35 @@
         </div>
       </div>
       <div id="resultContent"></div>
+    </div>
+  </div>
+
+  <div class="example-section">
+    <div class="example-section-title">See the magic</div>
+    <div class="example-boxes">
+      <div class="example-box before">
+        <h3>Before — Raw thoughts</h3>
+        <div class="content">Monday: product review meeting with eng team, talked about Q3 roadmap
+Wed: fixed login bug that was driving users crazy, pushed to prod
+Fri: did 3 user interviews, everyone hates the new dashboard lol
+Also somehow spent 2 hrs in a meeting that could've been an email
+Oh and the CEO asked about the churn numbers, need to pull those next week</div>
+      </div>
+      <div class="example-arrow">→</div>
+      <div class="example-box after">
+        <h3>After — Weekly report due?</h3>
+        <div class="content">• Accomplishments
+  – Led product review with engineering team; aligned on Q3 roadmap priorities
+  – Resolved critical login bug and deployed to production, eliminating a top user complaint
+  – Conducted 3 user interviews; identified strong negative sentiment toward new dashboard (action needed)
+
+• In Progress
+  – Preparing churn analysis report requested by CEO
+
+• Next Week
+  – Pull and analyze churn metrics for leadership review
+  – Synthesize user interview findings into dashboard redesign recommendations</div>
+      </div>
     </div>
   </div>
 
