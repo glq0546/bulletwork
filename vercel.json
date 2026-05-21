@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/deepseek/:path*",
+      "destination": "https://glq-api.asia/deepseek/:path*"
+    }
+  ]
+}
