@@ -261,7 +261,7 @@
       <span class="tag" onclick="appendTag('Interview')">Interview</span>
       <span class="tag" onclick="appendTag('Training')">Training</span>
     </div>
-    <textarea id="inputBox" maxlength="3000" placeholder="Drop your messy thoughts from the week in here. I'll handle the rest.&#10;&#10;e.g. Product review on Monday, fixed the login bug on Wednesday, user interviews on Friday..."></textarea>
+    <textarea id="inputBox" maxlength="3000" placeholder="Drop your messy thoughts from the week in here. I'll handle the rest.&#10;&#10;e.g. Product review on Monday, fixed the login bug on Wednesday, user interviews on Friday...&#10;&#10;Weekly report due"></textarea>
 
    <p class="privacy-note">We don't store your data. Processed securely via API.</p>
 
@@ -373,7 +373,7 @@
         '- Extract key points from the input, merge similar items, remove redundancy.',
         '- Keep each bullet short and impactful, 1-2 lines each.',
         '- Preserve any specific dates, names, or project names the user mentioned.',
-        '- Use "Weekly Report" as the title. Do not use placeholder text like "[Your Name]".',
+        '- Use "Weekly report due?" as the title. Do not use placeholder text like "[Your Name]".',
         '',
         'User input:',
         input
@@ -389,7 +389,7 @@
           body: JSON.stringify({
             model: MODEL,
             messages: [
-              { role: 'system', content: 'CRITICAL: DO NOT use any markdown formatting. No asterisks, no hashes, no underscores. Output MUST be plain text only using dashes for bullet points. You are a professional weekly report assistant. Organize the user\'s scattered input into a structured bullet-point weekly report using professional business English. Title the report "Weekly Report". Do not use placeholder text like "[Your Name]". Keep it readable and well-structured.' },
+              { role: 'system', content: 'CRITICAL: DO NOT use any markdown formatting. No asterisks, no hashes, no underscores. Output MUST be plain text only using dashes for bullet points. You are a professional weekly report assistant. Organize the user\'s scattered input into a structured bullet-point weekly report using professional business English. Title the report "Weekly report due?". Do not use placeholder text like "[Your Name]". Keep it readable and well-structured.' },
               { role: 'user', content: prompt }
             ],
             temperature: 0.7,
