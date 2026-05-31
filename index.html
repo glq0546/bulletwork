@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BulletWork</title>
+  <title>BulletWork — AI Weekly Report Generator | Turn Notes into Reports in 2 Minutes</title>
+  <meta name="description" content="BulletWork uses AI to transform your messy weekly notes into professional, well-structured reports. 3 free reports, no credit card. Try it now.">
+  <meta property="og:title" content="BulletWork — AI Weekly Report Generator | Turn Notes into Reports in 2 Minutes">
+  <meta property="og:description" content="BulletWork uses AI to transform your messy weekly notes into professional, well-structured reports. 3 free reports, no credit card. Try it now.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://glq-api.asia">
+  <meta property="og:site_name" content="BulletWork">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BulletWork — AI Weekly Report Generator">
+  <meta name="twitter:description" content="Turn messy notes into a clean English weekly report — instantly. 3 free reports.">
   <style>
     :root {
       --bg: #ffffff;
@@ -105,6 +114,7 @@
       color: var(--accent);
     }
 
+    .tags { display: none; }
     /* Privacy note */
     .privacy-note {
       margin-top: 8px;
@@ -309,13 +319,27 @@
     .footer a:hover {
       color: var(--text-secondary);
     }
+
+    .trial-badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 20px;
+    }
   </style>
 </head>
 <body>
 
   <div class="header">
     <div class="logo">Bullet<span>Work</span></div>
-    <p class="subtitle">Turn messy thoughts into a clean weekly report. Powered by AI.</p>
+    <p style="font-size:22px;font-weight:700;color:#1a1a2e;line-height:1.4;">Weekly report due?<br>Type what you did. We'll make it sound professional.<br>2 minutes.</p>
+    <p style="font-size:15px;color:#6b7280;">Turn messy notes into a clean English weekly report — instantly.</p>
+    <span class="trial-badge">🎉 3 free reports · no credit card required</span>
   </div>
 
   <div class="container">
@@ -339,24 +363,42 @@
   </button>
 
   <div id="paypal-button-container-P-8LV38194UT653264XNIDPJ2A"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=AT9-xHOs7TRV2sUpHQ0sw6VUmz9zoOU-eA4nEJFE6c0093jeH_mvlY5nB9fwE9K90ehjh-KwuKn9b8j2&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 <script>
-  paypal.Buttons({
-      style: {
-          shape: 'rect',
-          color: 'gold',
-          layout: 'vertical',
-          label: 'subscribe'
-      },
-      createSubscription: function(data, actions) {
-        return actions.subscription.create({
-          plan_id: 'P-8LV38194UT653264XNIDPJ2A'
-        });
-      },
-      onApprove: function(data, actions) {
-        alert(data.subscriptionID);
-      }
-  }).render('#paypal-button-container-P-8LV38194UT653264XNIDPJ2A');
+  // Lazy-load PayPal SDK only when user scrolls near the button area
+  (function() {
+    var paypalLoaded = false;
+    var paypalContainer = document.getElementById('paypal-button-container-P-8LV38194UT653264XNIDPJ2A');
+
+    function loadPayPalSDK() {
+      if (paypalLoaded) return;
+      paypalLoaded = true;
+      var script = document.createElement('script');
+      script.src = 'https://www.paypal.com/sdk/js?client-id=AT9-xHOs7TRV2sUpHQ0sw6VUmz9zoOU-eA4nEJFE6c0093jeH_mvlY5nB9fwE9K90ehjh-KwuKn9b8j2&vault=true&intent=subscription';
+      script.setAttribute('data-sdk-integration-source', 'button-factory');
+      script.onload = function() {
+        paypal.Buttons({
+          style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+          createSubscription: function(data, actions) {
+            return actions.subscription.create({ plan_id: 'P-8LV38194UT653264XNIDPJ2A' });
+          },
+          onApprove: function(data, actions) { alert(data.subscriptionID); }
+        }).render('#paypal-button-container-P-8LV38194UT653264XNIDPJ2A');
+      };
+      document.head.appendChild(script);
+    }
+
+    // Load when PayPal container is about to enter viewport (200px margin)
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) { loadPayPalSDK(); observer.disconnect(); }
+      }, { rootMargin: '200px' });
+      observer.observe(paypalContainer);
+    } else {
+      // Fallback: load on first scroll or click anywhere
+      window.addEventListener('scroll', loadPayPalSDK, { once: true });
+      paypalContainer.addEventListener('click', loadPayPalSDK, { once: true });
+    }
+  })();
 </script>
 </div>
 
@@ -403,9 +445,115 @@ Oh and the CEO asked about the churn numbers, need to pull those next week</div>
     </div>
   </div>
 
+  <!-- FAQ Section -->
+  <div class="faq-section" style="margin-top:48px;width:100%;">
+    <div class="example-section-title">Frequently Asked Questions</div>
+    <div style="display:flex;flex-direction:column;gap:4px;">
+      <div class="faq-item" style="margin-bottom:16px;">
+        <h3 style="font-size:16px;color:#1a1a2e;">Does BulletWork help with weekly reports?</h3>
+        <p style="color:#6b7280;">It takes your raw notes and uses AI to organize them into a professional, well-structured weekly report with proper English. No formatting or translating needed.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:16px;">
+        <h3 style="font-size:16px;color:#1a1a2e;">Is BulletWork free?</h3>
+        <p style="color:#6b7280;">You get 3 free reports with no credit card required. After that, it's $5/month for unlimited reports.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BulletWork?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BulletWork is an AI-powered tool that transforms your messy weekly notes into professional, well-structured English reports. Just type what you did during the week, and BulletWork organizes it into a polished report with proper formatting and business English."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does BulletWork generate my report?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply type or paste your raw weekly notes into the input box and click Generate Report. BulletWork's AI analyzes your input, extracts key accomplishments and tasks, and organizes them into a structured report grouped by categories like Accomplishments, In Progress, and Next Week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BulletWork free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! You get 3 free reports with no credit card required. After your free reports are used, it's $5/month for unlimited report generation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BulletWork store my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. BulletWork does not store your data. Your notes are processed securely via API and are not saved on our servers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is BulletWork for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BulletWork is designed for professionals, managers, engineers, and anyone who needs to write weekly reports but hates the formatting and writing process. It's especially helpful for non-native English speakers who want polished, professional reports."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the difference between BulletWork and ChatGPT?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While ChatGPT is a general-purpose AI, BulletWork is purpose-built for weekly reports. It comes with a tailored prompt structure, predefined report categories, and a clean UI designed specifically for turning notes into reports in under 2 minutes. No prompt engineering needed."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "BulletWork",
+    "url": "https://glq-api.asia",
+    "description": "AI-powered weekly report generator that turns messy notes into professional reports in 2 minutes.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "5",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2027-12-31",
+      "availability": "https://schema.org/InStock"
+    },
+    "featureList": [
+      "AI-powered weekly report generation",
+      "Turn messy notes into structured reports",
+      "Professional business English output",
+      "Automatic categorization (Accomplishments, In Progress, Next Week)",
+      "Edit and copy generated reports",
+      "3 free reports, no credit card required"
+    ]
+  }
+  </script>
+
   <div class="toast" id="toast"></div>
-  <p style="text-align:center;font-size:0.85rem;color:#9ca3af;margin-top:48px;">Built by an indie developer for remote workers.</p>
+  <p class="founder-note">Built by Zhen · Solo founder · I built this because I hate writing weekly reports too.</p>
   <footer class="footer">
+    <div class="legal-links">
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms of Service</a> ·
+      <a href="/refund.html">Refund Policy</a>
+    </div>
     <p>&copy; 2026 BulletWork</p>
     <p><a href="mailto:hello@bulletwork.so">hello@bulletwork.so</a></p>
   </footer>
@@ -474,7 +622,7 @@ Oh and the CEO asked about the churn numbers, need to pull those next week</div>
       ].join('\n');
 
       try {
-        const resp = await fetch('https://twilight-morning-f9f0.glq-0546.workers.dev/deepseek/v1/chat/completions', {
+        const resp = await fetch('https://api.glq-api.asia/deepseek/v1/chat/completions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
