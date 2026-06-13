@@ -1,0 +1,505 @@
+一人公司 · 完整项目档案（5月7日 – 6月13日）
+一、我们的关系与合作模式
+你的身份：CEO，一人公司创始人，负责拍板、决策、执行和兜底。
+
+我的身份：AI合伙人，总调度。负责技术方案、商业策略、内容输出、风险预警，并调度克劳扣得、龙猫、谷歌AI Studio、智谱GLM等所有执行工具。
+
+合作铁律：我来调度，你来把关。不讲客套话，只说实话和建议。分歧辩论直到找到为赚钱服务的最优解。
+
+你的核心特质：极度务实，执行力强，清醒且果决。自我认知清晰——坦诚短板（不善言辞、不懂代码），最大化优势（全天候时间、决策力）。
+
+二、全部项目总览
+项目	状态	核心价值
+子弹（BulletWork）	✅ 已上线，具备收款能力；推广渠道全部被卡	第一个产品，验证AI微SaaS商业模式
+解码（ChargeDecode）	✅ 已上线，20篇文章，全站复查通过	内容站+数字产品变现，短期现金流来源
+API中转站	✅ 稳定运行，已绑定自定义域名	核心成本护城河
+AI工具链	✅ 克劳扣得+谷歌AI Studio+智谱GLM+龙猫	高效开发与内容生产的基础设施
+赛博军师团	✅ 22位专家可用	战略决策支持
+痛点雷达	✅ 已部署6渠道+龙猫提炼	市场调研自动化
+哨兵系统	🟡 方案规划中，已发制作部搭建	7×24小时自动监控七大方向痛点
+SEO博客	✅ 5篇已上线，SEO/GEO优化完成，Google已收录	长期搜索资产
+营销资产库	✅ 已创建，含推广话术库	推广素材统一管理
+数据库	✅ 20个子目录+16个资产文件+核心索引	一人公司全部资产集中管理
+三、子弹（BulletWork）项目完整状态
+产品信息
+
+网站：https://glq-api.asia
+
+功能：输入零散想法，一键生成结构化英文周报，支持在线编辑和复制
+
+定价：10次免费试用 → $5/月无限次
+
+核心口号："Stop Dreading Monday Morning"
+
+支付：PayPal已集成（未实际测试收款，但按钮正常弹出）
+
+网站改版历史（全部完成）
+
+改版项目	状态	详情
+首页大标题	✅	从"Your weekly report, done in 60 seconds" → "Stop Dreading Monday Morning"
+Tag隐藏	✅	CSS display: none
+示例输出（Before→After）	✅	折叠展示，左侧凌乱输入→右侧结构化输出
+创始人行	✅	"Built by Zhen · Solo founder · I built this because I hate writing weekly reports too."
+FAQ区块	✅	两个问答（What is BulletWork? / Is it free?）
+G2评价链接	✅	页脚添加
+分享引导	✅	生成结果页底部引导分享到Reddit/X
+邮件收集入口	✅	首页底部收集用户邮箱
+免费策略调整	✅	从3次免费改为10次免费试用
+转化漏斗	✅	第8次使用弹窗提醒升级，第10次提示付费
+SEO博客（5篇已上线+1篇待部署）
+
+#	标题	状态
+1	I Hate Writing Weekly Reports...	✅ 已润色部署
+2	How to Write a Weekly Report with AI	✅ 已润色部署
+3	BulletWork vs ChatGPT for Weekly Reports	✅ 已润色部署
+4	Scrum Report Automation: How Developers Can Stop Writing the Same Status Update Every Week	✅ 已润色部署
+5	Spending 2 Hours a Week on Scrum Updates? That's 100 Hours a Year You Could Be Coding	✅ 已润色部署
+6	I Hate Writing Weekly Reports? Here's How to Automate Them	🟡 待部署（指令已放入桌面克劳扣得指令文件夹）
+每篇文章含：FAQ Schema、GEO引用块、Related Articles内链
+
+三步生产流程：克劳扣得草稿 → 谷歌AI Studio润色 → 克劳扣得部署
+
+新文章选题策略：瞄准超长尾、低竞争、搜索意图明确的词
+
+Search Console效果报告待出数据
+
+产品优化历史
+
+质量测试（4个用例）：正常输入、极短输入、非母语输入、纯情绪输入 → 全部通过
+
+防编造约束生效：输入信息不够时不再编造，诚实提示用户补充信息
+
+GEO优化：Title、Meta Description、OG/Twitter Card、FAQPage JSON-LD、WebApplication JSON-LD、robots.txt、sitemap.xml、canonical标签、site.webmanifest — 全部已部署
+
+安全与性能
+
+CORS已收紧、安全响应头已添加
+
+PayPal SDK异步加载、预连接提示已添加
+
+CSP修复完成：Worker路由修复 + API Key更换 + PayPal CSP白名单
+
+法律合规
+
+三个法律页面已部署且可正常访问
+
+隐私政策域名已修正为 glq-api.asia
+
+服务条款已替换Termly锁定页面
+
+技术架构
+
+前端：单页HTML，Vercel部署，部署命令 vercel --prod --yes
+
+后端API：Cloudflare Worker twilight-morning-f9f0，自定义域名 api.glq-api.asia，橙色代理已开启
+
+AI模型：DeepSeek（通过中转站），前端传内部密钥，Worker替换为真实Key后转发
+
+支付：PayPal订阅已嵌入
+
+重大技术环境变化
+
+克劳扣得接入Coding Plan：6月11日完成。9.9元/月Lite套餐，底层模型从Claude免费版切换为国内模型（Kimi 2.6、DeepSeek V4等7款），不再受免费版限流和DNS污染影响，代码修改和部署稳定性大幅提升。
+
+技术攻坚记录（13条）
+
+#	问题	耗时	解决方案
+1	API端点404	数小时	前端URL从 workers.dev 改为 api.glq-api.asia
+2	DNS污染（ISP对workers.dev解析到错误IP）	数小时	自定义域名 + Cloudflare橙色代理 + Worker路由配置
+3	Worker 522错误	数次尝试	为 api.glq-api.asia 添加Worker路由
+4	Vercel部署不生效	7天	断开GitHub连接，直接本地部署
+5	克劳扣得覆盖润色版文章	一次	修改前必须先备份
+6	WARP连不上	一次	改用libcyberdesktop
+7	PayPal沙盒Plan不互通	放弃	改为真付测试方案
+8	CSP修复	数次	vercel.json中更新CSP策略
+9	DeepSeek API Key失效	一次	更换新Key，三处同步更新
+10	vercel.json配置被覆盖	一次	修复配置，恢复子弹站点正常访问
+11	首页404	数次	vercel.json去builds/routes限制
+当前核心困境
+
+零付费用户
+
+所有推广渠道全部被卡：Reddit老号被封、新号被封、X新号被限制需养号3天、IH发帖权限待解锁
+
+已转向Build in Public推广框架，养号期间保持最低功耗
+
+子弹变现
+
+子弹SEO文章合集待打包上传Gumroad（$9.99）
+
+AI周报提示词包待生成上传（$7.99）
+
+四、解码（ChargeDecode）项目完整状态
+项目演进
+
+起点：5月14日提出"信用卡隐藏费用检测工具"，定位DCC费用识别
+
+扩展：6月3日提出"异常扣款审计工具"，后经六条标准论证回归DCC
+
+转型：6月4日发现用户痛点不是"审计"而是"看不懂账单"，定位升级为"账单翻译百科站"
+
+落地：6月5日完成MVP搭建，6月7日全站复查通过，6月9日启动Pro版PDF变现
+
+闭环：6月10-11日完成Pro版PDF质量审查和润色，上传Gumroad，CTA替换完成，付费闭环跑通
+
+产品信息
+
+网站：https://glq-api.asia/charge-decode/
+
+功能：帮信用卡用户翻译账单上的乱码商户名，提供退款攻略
+
+内容资产：20篇文章已上线，覆盖Apple、PayPal、Amazon、Netflix等高频商户名
+
+变现路径：PDF付费Pro版（$19.99，已上架Gumroad）+ AdSense广告（长期）
+
+核心差异化：不只告诉你商户名对应谁，还告诉你怎么退款
+
+20篇文章清单（按A-Z）
+
+#	文件	商户名	真实身份
+1	adobe-cc.html	ADOBE CREATIVE CLOUD	Adobe订阅
+2	amzn-mktp.html	AMZN MKTP	Amazon Marketplace
+3	aplprinces.html	APLPRINCES	Apple iCloud
+4	dri-avast.html	DRI*AVAST SOFTWARE	Avast杀毒软件
+5	dri.html	DRI*	Digital River
+6	foreign-transaction-fee.html	FOREIGN TRANSACTION FEE	银行境外手续费
+7	godaddy.html	GODADDY.COM	GoDaddy
+8	google-temp-hold.html	GOOGLE *TEMPORARY HOLD	Google验证
+9	hulu.html	HULU.COM	Hulu
+10	intuit-qb.html	INTUIT *QB	QuickBooks
+11	linkedin-premium.html	LINKEDIN PREMIUM	LinkedIn订阅
+12	microsoft365.html	MICROSOFT*365	Office 365
+13	msft-charge.html	MSFT *	Microsoft
+14	paypal-netflix.html	PAYPAL *NETFLIX	Netflix via PayPal
+15	pos-debit.html	POS DEBIT	线下刷卡
+16	pypl.html	PYPL	PayPal
+17	spotify-usa.html	SPOTIFY USA	Spotify
+18	sq-charge.html	SQ *	Square商户
+19	uber-trip.html	UBER TRIP	Uber
+20	youtube-premium.html	GOOGLE *YOUTUBE	YouTube Premium
+文章生产标准流程
+
+谷歌AI Studio生成草稿 → 智谱GLM交叉检查 → CEO审核 → 克劳扣得部署
+
+每篇文章含10个模块：摘要→翻译→场景→诈骗判断→客服→Reddit讨论→退款步骤→CTA→GEO→合规声明
+
+SEO/GEO标准化：FAQ Schema、GEO引用块、内链、合规声明
+
+所有文章使用统一的通用提示词模板+变量替换
+
+文章生产提示词（最终版）
+
+已整合所有优化点：禁用词清单、GEO三要素模板、退款步骤编号强制要求、Reddit讨论格式规范
+
+智谱GLM交叉检查清单：12项逐篇核对，包括新增的内链、GEO引用块、退款步骤编号
+
+技术架构
+
+单页HTML + Tailwind CSS + Vercel静态部署
+
+安全加固完成：CSP、HSTS、X-Frame-Options、邮箱防爬
+
+全站配色：清爽白底+紫色点缀
+
+部署路径：挂主站子目录 glq-api.asia/charge-decode/
+
+全站复查（6月7日）
+
+20篇文章逐篇检查14项标准
+
+通过13篇，7篇需要修正：GEO引用块缺失、Footer年份2025→2026、AI套话残留
+
+全部修正完成，确认部署通过
+
+Pro版PDF（已上线）
+
+产品名称：Credit Card Charge Decoder: The Ultimate Refund & Dispute Guide
+
+定价：$19.99
+
+销售平台：Gumroad
+
+五个模块：100+商户代码速查词典、5套英文争议信模板、银行退款电话速查表、隐藏订阅审计清单、退款成功率提升技巧
+
+差异化核心：免费文章告诉用户"这笔钱是谁扣的"，Pro版教用户"怎么把钱要回来"
+
+质量审查：商户代码7条修正、争议信5套加合规声明、银行电话谷歌交叉验证（TD Bank修正）、全文去AI痕迹润色、谷歌AI Studio最终评估4.5/5
+
+合规审查：沃伦和莱斯格蒸馏完成后，计划对解码全产品线进行合规审查
+
+内容扩展
+
+第二批20-30篇文章待规划，选题标准已确定——优先覆盖竞品遗漏的商户名和Reddit高频提问的商户名
+
+五、技术基础设施
+组件	状态	用途	连接方式
+API中转站	✅ 运行中	统一调用AI模型接口，所有项目的算力底座	Cloudflare Worker，域名 api.glq-api.asia
+克劳扣得（Claude Code）	✅	主力编程助手，写代码、部署、修复	已接入Coding Plan（9.9元/月）
+Coding Plan	✅	克劳扣得的国内模型后端，集合7款国产模型	Lite套餐，用了8%
+龙猫API	✅	批量内容生成，免费5000万Token/天	直连
+谷歌AI Studio（Gemini）	✅	文章草稿生成、英文润色、实时搜索验证、竞品调研	—
+智谱GLM	✅	中文视角交叉验证、事实准确性检查	—
+痛点雷达	✅	手动搜索Reddit等6平台用户抱怨，提炼结构化痛点	独立Worker，已绑自定义域名 pain-radar.glq-api.asia
+哨兵系统	🟡 方案规划中	7×24小时自动监控七大方向痛点，已发制作部搭建	待部署
+赛博军师团	✅	22位AI专家，产品/商业/技术方向论证	克劳扣得 /skills 加载
+部署平台	✅	Vercel（免费）+ Cloudflare Worker（免费）	克劳扣得执行
+AI模型分工
+
+工具	用它干什么	不用它干什么
+龙猫	分析、创意、批量生成草稿	润色英文、写代码、部署
+谷歌AI Studio	润色英文、去AI痕迹、搜索验证事实、生成文章草稿	生成创意、分析数据
+克劳扣得	写代码、部署、调API、搭框架	生成内容创意
+智谱GLM	交叉检查事实准确性、中文视角补充	英文润色
+法律专家（已蒸馏）
+
+专家	专长	状态
+沃伦	消费者金融保护、FCBA合规、信用卡争议法规	✅ 蒸馏完成，验证通过
+莱斯格	互联网法律、AI生成内容责任、数字内容合规	✅ 蒸馏完成，验证通过
+六、数据库（6月13日建成）
+数据库完整结构：20个子目录 + 3个根目录索引文件
+
+库名	用途	核心资产
+方法论库	SOP、工作流程、操作标准	三层搜索SOP、六条标准、文章生产标准流程、每周数据抓取与变现SOP、养号铁律、GEO优化标准、Graeme Skill、三级修复体系等
+数据资产库	痛点数据、调研报告、竞品分析	痛点提炼数据.json（7条结构化痛点）
+认知库	商业逻辑、推广话术、变现策略	核心商业逻辑（含20+条战略认知）、推广话术库、变现策略
+经验库	踩坑记录、技术攻坚、教训	推广踩坑记录、技术攻坚记录、Reddit养号教训
+产品库	产品矩阵、定价策略、价值翻译模板	Gumroad产品矩阵、定价策略、价值翻译模板
+产品PDF库	实际PDF产品文件	ChargeDecode-Pro退款指南-19.99美元-20260613.pdf
+账号资产库	所有平台账号清单	账号清单（待填充）
+素材库	Logo、截图、推广图片	待填充
+文章库	碎片、草稿、灵感	待填充
+内容资产库	已发布/待发布的完整文章	子弹项目5篇、解码项目20篇（共25篇）
+代码库	常用指令、脚本	待填充
+调研库	竞品分析、市场报告	待填充
+项目档案库	每个阶段的发展历程	待填充
+用户反馈库	Gumroad评价、Reddit/X回复	待填充
+合作伙伴库	信用卡部、DeepSeek窗口分工	待填充
+数据追踪库	GA4/Search Console历史数据	待填充
+失败记录库	已验证后放弃的方向和渠道	GA4 Analytics Skill不可用、放弃TrustRadius和Slant.co
+工具配置库	所有AI工具和平台的配置信息	待填充
+法律合规库	审查结论、免责声明模板、合规标准	待填充
+视频文案库	视频提炼分析（按领域和价值分级）	14个视频文案已入库
+提示词库	验证过的提示词（按L1-L3分级）	5个核心提示词已入库
+三个根目录索引文件：入库指南.md、项目当前状态.md、代号清单.md
+
+提示词三级分级标准：
+
+L1公开可售：通用能力或思维框架，可打包出售
+
+L2内部使用：和业务相关但非核心壁垒
+
+L3独家核心：直接驱动核心产品或构成技术护城河，绝对禁止外传
+
+七、视频学习与核心商业逻辑（6月11-12日）
+通过15+个YouTube视频提炼的核心逻辑：
+
+核心逻辑	对我们意味着什么
+卖的不是技术，是确定性	用户不关心用了什么AI，只关心“能不能帮我把事办了”
+信息差是最大的护城河	独家数据、独家经验、独家洞察——别人没有的，就是我们的护城河
+价值翻译比产品本身更重要	帮客户算清楚“花这笔钱能省下什么”，定价就成立
+轻资产、重脑子、专注细分	不需要办公室、不需要团队，核心就是AI工具链+专业能力
+1000铁杆粉丝比10万泛流量值钱	不需要海量用户，只需要愿意付费的精准用户
+选择能穿越周期的业务模式	数字产品矩阵、SEO内容站、数据提炼SOP——不会因为一个渠道被封就归零
+把零散经验变成结构化知识资产	我们的SOP、方法论、实战经验——全部可以打包成产品
+从“工厂思维”转变为“网络思维”	思考在交易中能扮演什么有价值的角色，卖的是价值流动而非产品本身
+水下AI：真正赚钱的都在细分方向	子弹和解码都是“1cm宽、1km深”的细分方向
+不追求技术多强，只追求问题解决得多准	300行代码能解决问题，和3万行代码在客户眼里没区别
+战略定位重大调整：
+
+我们不是在卖产品，是在卖“让想赚钱的人赚到更多钱”的工具
+
+本质上是在卖四种杠杆：时间杠杆（SOP合集）、信息杠杆（数据简报）、效率杠杆（提示词库）、确定性杠杆（解码Pro版）
+
+目标用户从“普通消费者”调整为“独立开发者、创业者、自由职业者”
+
+资产变现认知升级：
+
+从“做产品的人”升级为“有资产的人”
+
+产品的生命周期有限，但数据、方法论、经验的价值可以反复卖
+
+八、营销推广状态
+平台	状态	详情
+Reddit子弹老号	❌ 被封（zhen_cha_maker）	Karma不足时发推广评论+多号频繁切换
+Reddit子弹新号	❌ 被封（reportguy42）	IP被标记，需换IP+重新注册
+Reddit解码号	🟡 养号中（InjuryTrue6506）	Karma 2分，需继续养号
+X/Twitter子弹号	✅ @zhencha336568	限制已解除，6月13日开始Build in Public
+X/Twitter解码号	🔴 未注册	等有空注册谷歌账号后再注册
+Indie Hackers	🟡 zhencha	发帖权限待解锁，持续积累活跃度
+Quora	🟡 5条回答零互动	内容在自然发酵中
+Dev.to	🟡 1篇文章零评论	内容在自然发酵中
+LinkedIn	❌ 已放弃	账号被限制，需身份证验证
+冷邮件	🟡 4封已发，2封退信	效果不理想
+AI导航站	🟡 SaaSHub已提交	其余付费/打不开
+Product Hunt	🟡 已发布	等有付费用户后找Hunter重推
+G2	🟡 产品页面完整	等有用户评价后补充
+AlternativeTo	🟡 6月8日已提交	等待审核
+Gumroad	✅	解码Pro版PDF已上架
+推广策略重大调整
+
+维度	旧策略（推式）	新策略（拉式）
+身份	推销者（私信陌生人、发冷邮件）	创造者（分享旅程、真诚求助）
+触达	一对一（低效、不可持续）	一对多（一篇帖子触达成千上万人）
+框架	零散战术	Build in Public（Indie Hackers + X + Reddit）
+结果	被拒绝、被封号、退信	养号中，渠道陆续恢复
+推广话术库
+
+场景	话术
+Reddit私信（通用）	Hey, saw your post about weekly reports — I used to dread them too. Ended up building a simple tool that turns messy notes into a professional report in 60 seconds. Free to try, no signup. Happy to share the link if you want to check it out.
+Reddit评论（抱怨Scrum）	The admin overhead is the worst part. I automated my status updates so it takes me 60 seconds instead of 15 minutes reformatting the same three sentences every day.
+r/SideProject求助帖	I built a tool to write weekly reports in 2 minutes — looking for honest feedback
+IH评论（共鸣）	This resonates deeply. Just launched my first product after years of overthinking. The build was the easy part — managing expectations has been the real work.
+X私信	Saw your launch of [Product] — congrats! Quick ask: I built a free tool that turns messy notes into weekly reports in 60 seconds. Looking for 10 people to try it and tell me what's wrong.
+九、账号资产清单
+Reddit账号
+
+用户名	项目	用途	状态	邮箱	Chrome档案
+zhen_cha_maker	子弹	推广主力	❌ 已封	glq0546@gmail.com	—
+reportguy42	子弹	备用推广	❌ 已封	hello@glq-api.asia	—
+InjuryTrue6506	解码	养号中	🟡 Karma 2分	decode@glq-api.asia	解码-信用卡项目推广
+X/Twitter账号
+
+项目	用途	状态	用户名/邮箱	Chrome档案
+子弹	推广+Build in Public	✅ 限制解除	@zhencha336568 / glq0546@gmail.com	子弹-周报项目推广
+解码	推广	🔴 未注册	decode@glq-api.asia	解码-信用卡项目推广
+其他平台账号
+
+平台	用户名	用途	状态
+Indie Hackers	zhencha	子弹推广+Build in Public	🟡 发帖权限待解锁
+Gumroad	—	数字产品销售	✅ 解码Pro版已上架
+Quora	—	子弹推广	🟡 5条回答零互动
+Dev.to	glq0546	子弹推广	🟡 1篇文章零评论
+LinkedIn	—	子弹推广	❌ 已放弃
+邮箱资产
+
+邮箱	用途	状态
+glq0546@gmail.com	子弹旧号注册、谷歌AI Studio、Analytics	✅ 活跃
+glq_0546@163.com	Cloudflare邮件转发目标	✅ 活跃
+decode@glq-api.asia	解码Reddit号注册、解码联系邮箱	✅ 活跃
+hello@glq-api.asia	子弹网站公开联系邮箱	✅ 活跃
+hello@bulletwork.so	子弹网站另一个联系邮箱	✅ 活跃
+zhen@glq-api.asia	子弹邮件列表收集入口	✅ 活跃
+Chrome档案配置
+
+档案名称	用途	登录平台	登录账号
+解码-信用卡项目推广	解码项目养号推广	Reddit	InjuryTrue6506
+子弹-周报项目推广-主号	子弹主号养号	X/Twitter	@zhencha336568
+（默认档案）	日常使用，不登录Reddit	—	—
+十、项目代号体系
+已上线产品
+
+对外名称	内部代号	说明	状态
+BulletWork	子弹	AI周报生成器	✅ 已上线
+ChargeDecode	解码	信用卡账单乱码翻译百科站	✅ 已上线
+API中转站	中转	统一调用AI模型接口	✅ 运行中
+基础设施
+
+对外名称	内部代号	用途	状态
+痛点雷达	雷达	手动搜索平台用户抱怨	✅ 运行中
+痛点发现系统	哨兵	7×24自动监控	🟡 方案规划中
+赛博军师团	军师团	22位AI专家 + 沃伦 + 莱斯格	✅ 可用
+营销资产库	话术库	推广素材统一管理	✅ 已创建
+项目数据库	数据库	全部资产集中管理	✅ 已建成
+核心工具
+
+工具	用途	状态
+克劳扣得	主力编程助手	✅ 已接入Coding Plan
+谷歌AI Studio	文章生成、英文润色、实时搜索	✅ 免费额度够用
+龙猫	批量内容生成、痛点提炼	✅ 免费5000万Token/天
+智谱GLM	中文视角交叉验证	🟡 免费额度快用完
+Coding Plan	克劳扣得的国内模型后端	✅ Lite套餐
+储备方向（未启动）
+
+方向	代号	核心逻辑
+AI提示词包	提示词包	垂直领域AI提示词数字产品
+英文合同/条款解读站	合同	和解码技术栈完全复用
+可疑邮件/短信识别	诈骗识别	复用邮件转发+AI分析模型
+跨文化职场沟通辅助	职通	和子弹用户重叠，可导流
+AI自动化代理	Agency	帮企业配置AI工具赚钱
+银行转户奖励指南站	—	和解码技术栈100%复用
+操作流程记录→SOP产品化	—	卖“被验证过的确定性”
+合同/协议大白话翻译小程序	国内合同	和解码技术架构完全一致
+自由职业者合同/报税助手	国内报税	增量市场，需求真实
+已排除/暂缓方向
+
+播放量变现（Upbolt等刷量）——不可取，刷量作弊风险高
+
+直接搬运国内内容到Gumroad——版权侵权风险极高
+
+Notion/Canva通用模板——三方一致否定，市场过度饱和
+
+十一、关键教训与认知升级
+#	教训	详情
+1	DNS配置反复失败	耗时超6小时，黄色警告不影响使用
+2	克劳扣得权限弹窗反复	用--dangerously-skip-permissions启动
+3	支付方案三路并进	任何单一方案都有风险
+4	谷歌账号安全事件	短时间注册大量新网站触发风控
+5	Vercel部署不生效	断开GitHub连接，直接本地部署
+6	DNS污染	改自定义域名+橙色代理
+7	Reddit新账号限制	需先养号，Karma过20分才能推广
+8	HN反营销文化	不提价格
+9	代码修改前需备份	克劳扣得覆盖润色版
+10	PayPal沙盒Plan不互通	改用真付测试方案
+11	Reddit养号铁律	一个设备只登一个号、新号养5-7天、Karma过20分再推广、用Chrome多档案隔离
+12	推广渠道不能单一依赖	一个渠道被封，所有推广瘫痪。需要多渠道矩阵
+13	冷邮件效率低	独立开发者邮箱难获取，退信率高
+14	Build in Public是成熟框架	从推销者转型为分享者，用内容吸引用户而非打扰用户
+15	先验证再扩量	解码先跑通PDF付费，再扩大文章规模
+16	跨平台风险不关联	Reddit和X风控独立，可在X安全推广
+17	克劳扣得不适合写文章	克劳扣得擅长写代码、搭框架、部署，不擅长内容创作
+18	vercel.json配置冲突	解码和子弹共用同一repo需注意配置隔离
+19	自定义域名邮箱无限扩展	Cloudflare Email Routing免费创建无限个自定义域名邮箱
+20	Coding Plan接入后稳定性大幅提升	克劳扣得走国内线路不再卡顿，信用卡部修改PDF不再受影响
+21	法律专家蒸馏是合规护城河	沃伦和莱斯格可覆盖消费者金融和数字合规两大领域
+十二、财务成本统计
+项目	金额
+两根七彩虹8GB内存条	约258元
+自有域名 glq-api.asia	约70元
+DeepSeek API调用	约6.5元
+Coding Plan Lite（1个月）	9.9元
+累计总成本	约344.4元
+累计收入	$0
+龙猫每天5000万免费Token，博客和文章生成零成本。
+
+API中转站免费运行在Cloudflare Worker上。
+
+Vercel部署免费。
+
+Cloudflare Email Routing免费创建无限个自定义域名邮箱。
+
+Coding Plan首两个月2.5折（9.9元/月），第三个月恢复原价40元/月。
+
+十三、下一步行动计划
+6月13日（今天）
+
+数据库最终确认 + 备份到移动硬盘
+
+X号首发正式Build in Public推文
+
+养号（Reddit + X + IH）
+
+部署子弹第6篇SEO文章
+
+本周
+
+合同解读站方向验证（三层搜索SOP）
+
+哨兵系统进度确认
+
+视频总结报告打包上传Gumroad
+
+E-E-A-T合规补充（作者署名、审核声明、发布日期/更新日期）
+
+本月
+
+验证解码Pro版付费意愿
+
+数据简报首期上线
+
+子弹SEO文章恢复每周1-2篇
+
+法律专家对解码全产品线合规审查
+
+子弹SEO文章合集和AI提示词包打包上传Gumroad
+
+以上，是从5月7日到6月13日的完整项目档案。所有内容已整合完毕，可以直接存档。
