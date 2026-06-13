@@ -1,0 +1,114 @@
+{
+  "title": "痛点提炼数据",
+  "date": "2026-06-13",
+  "coreContent": {
+    "description": "根据项目档案、痛点雷达方案和既有调研记录整理的结构化痛点数据。敏感密钥、账号密码和私密配置已排除。",
+    "fields": ["id", "category", "painPoint", "userPersona", "emotionalIntensity", "willingnessToPay", "payQuote", "source", "evidence", "status", "monetizationIdea"]
+  },
+  "data": [
+    {
+      "id": "credit-card-001",
+      "category": "信用卡投诉",
+      "painPoint": "境外消费或旅行预订时被收取DCC/动态货币转换隐藏费用，用户事后才发现汇率或手续费异常。",
+      "userPersona": "有国际旅行、跨境消费或海外平台预订需求的信用卡用户。",
+      "emotionalIntensity": "高",
+      "willingnessToPay": true,
+      "payQuote": "项目判断：帮用户找回被扣的钱，付费意愿最强。",
+      "source": "Reddit/项目档案",
+      "evidence": ["印度用户在Klook预订时被收取DCC费用。", "菲律宾用户预订本地Airbnb被收1.5% DCC。", "在韩外国侨民使用本国银行卡被收隐性汇率损失。"],
+      "status": "已验证痛点，后续转入ChargeDecode内容和Pro PDF模块。",
+      "monetizationIdea": "DCC/Hidden Fee Dispute模板、退款指南、信用卡扣款解释站。"
+    },
+    {
+      "id": "credit-card-002",
+      "category": "信用卡投诉",
+      "painPoint": "用户看不懂账单上的乱码商户名，不知道扣款来自Apple、PayPal、Amazon、Digital River还是诈骗。",
+      "userPersona": "普通信用卡用户、订阅服务用户、家庭账单管理者。",
+      "emotionalIntensity": "高",
+      "willingnessToPay": true,
+      "payQuote": "免费文章告诉用户‘这笔钱是谁扣的’，Pro版教用户‘怎么把钱要回来’。",
+      "source": "ChargeDecode项目档案",
+      "evidence": ["20篇文章覆盖APLPRINCES、AMZN MKTP、DRI*、PYPL、SQ *、GOOGLE *TEMPORARY HOLD等高频商户名。"],
+      "status": "已落地为ChargeDecode内容站。",
+      "monetizationIdea": "100+商户代码词典、争议信模板、隐藏订阅审计清单，Gumroad $19.99。"
+    },
+    {
+      "id": "credit-card-003",
+      "category": "信用卡投诉",
+      "painPoint": "忘记取消试用、订阅继续扣费、重复扣款或商品未收到后不知道如何写英文争议信。",
+      "userPersona": "使用流媒体、软件订阅、电商和数字服务的消费者。",
+      "emotionalIntensity": "高",
+      "willingnessToPay": true,
+      "payQuote": "一笔不明订阅或重复扣款可能超过PDF价格，模板能直接帮助用户行动。",
+      "source": "Pro PDF产品设计",
+      "evidence": ["PDF包含Unauthorized Charge、Subscription Cancellation、Duplicate Charge、Product Not Received、DCC/Hidden Fee五类模板。"],
+      "status": "已转为Pro PDF核心模块。",
+      "monetizationIdea": "英文争议信模板包、消费者维权模板包。"
+    },
+    {
+      "id": "saas-churn-001",
+      "category": "SaaS流失",
+      "painPoint": "SaaS用户在试用或订阅后流失，常见原因是初次价值不明确、激活路径太长、用户没有立即看到结果。",
+      "userPersona": "独立开发者、小型SaaS创始人、早期产品负责人。",
+      "emotionalIntensity": "中",
+      "willingnessToPay": true,
+      "payQuote": "适合转为每周用户痛点简报和落地页/激活诊断清单。",
+      "source": "项目复盘/推广数据",
+      "evidence": ["BulletWork产品可用、支付可用、SEO页面收录，但零付费用户，核心瓶颈是没有可运转渠道。", "GA4过去7天访问极少，说明不是转化优化优先，而是获客链路断裂。"],
+      "status": "作为数据资产储备，需继续抓取Reddit/IH/GitHub讨论补充。",
+      "monetizationIdea": "SaaS Churn Pain Brief、独立开发者获客诊断模板。"
+    },
+    {
+      "id": "saas-churn-002",
+      "category": "SaaS流失",
+      "painPoint": "早期产品过度打磨功能，但没有真实用户使用，导致无法判断产品问题还是渠道问题。",
+      "userPersona": "刚上线第一个产品的solo founder。",
+      "emotionalIntensity": "中",
+      "willingnessToPay": true,
+      "payQuote": "创始人愿意为‘怎么拿到前10个用户’这类具体方法付费。",
+      "source": "BulletWork推广复盘",
+      "evidence": ["产品优化很多：首页、FAQ、Before/After、分享引导、邮件入口、SEO/GEO都完成，但访问量仍为零。"],
+      "status": "已形成Build in Public和冷启动话术。",
+      "monetizationIdea": "First 10 Users Checklist、Indie Hacker Launch Rescue Kit。"
+    },
+    {
+      "id": "github-discussion-001",
+      "category": "GitHub讨论",
+      "painPoint": "开发者在Issues/Discussions中反复遇到部署、配置、CSP、API Key、路由冲突等问题，但解决方案分散，难以复用。",
+      "userPersona": "独立开发者、前端开发者、使用Vercel/Cloudflare Worker部署的人。",
+      "emotionalIntensity": "中",
+      "willingnessToPay": false,
+      "payQuote": "",
+      "source": "项目技术攻坚记录/GitHub类讨论模式",
+      "evidence": ["Vercel部署不生效、vercel.json配置冲突、CSP拦截PayPal/API、Worker 522、DNS污染。"],
+      "status": "已沉淀为技术攻坚记录，可转成公开教程或检查清单。",
+      "monetizationIdea": "Vercel + Cloudflare Worker部署排错清单、独立开发者上线工具包。"
+    },
+    {
+      "id": "github-discussion-002",
+      "category": "GitHub讨论",
+      "painPoint": "开源或技术项目中用户常常不知道错误来自前端、路由、Worker、环境变量还是第三方API。",
+      "userPersona": "非专业程序员、AI辅助编程用户、独立开发新手。",
+      "emotionalIntensity": "中",
+      "willingnessToPay": true,
+      "payQuote": "如果能把排错链路变成清单或模板，对AI编程新手有价值。",
+      "source": "项目复盘",
+      "evidence": ["API端点404需要同时检查前端URL、Worker路由、自定义域名；API Key失效需要三处同步更新。"],
+      "status": "可进入工具配置库或方法论库。",
+      "monetizationIdea": "AI Coding Debug Checklist、部署前检查模板。"
+    },
+    {
+      "id": "work-report-001",
+      "category": "职场效率",
+      "painPoint": "开发者和远程工作者厌烦每周写周报、Scrum更新和重复状态报告。",
+      "userPersona": "开发者、远程员工、产品经理、团队负责人。",
+      "emotionalIntensity": "中",
+      "willingnessToPay": true,
+      "payQuote": "把15分钟周报压缩到60秒。",
+      "source": "BulletWork项目档案/SEO博客",
+      "evidence": ["I hate writing weekly reports、scrum update waste of time、daily standup boring等关键词已纳入监控。"],
+      "status": "已落地为BulletWork。",
+      "monetizationIdea": "$5/月订阅、周报提示词包、团队状态更新模板。"
+    }
+  ]
+}
