@@ -56,6 +56,9 @@
     { "source": "/pages/microsoft365.html", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
     { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365", "permanent": true }
   ],
+  "rewrites": [
+    { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
