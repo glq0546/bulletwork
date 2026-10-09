@@ -1,0 +1,10 @@
+const fs = require("fs");
+const mainContent = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/api-main-content.txt", "utf8");
+const headSection = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/head-section.html", "utf8");
+const styleSection = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/style-section.html", "utf8");
+const bodyHeader = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/body-header.html", "utf8");
+const footerSection = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/footer-section.html", "utf8");
+const jsonLd = fs.readFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/jsonld.html", "utf8");
+const fullHtml = headSection + styleSection + jsonLd + "</head><body>" + bodyHeader + mainContent + footerSection;
+fs.writeFileSync("C:/Users/Administrator/Desktop/bulletwork-repo/charge-decode/pages/aplprinces.html", fullHtml, "utf8");
+console.log("done, size:", fullHtml.length);

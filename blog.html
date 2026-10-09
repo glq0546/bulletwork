@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — The BulletWork Journey</title>
+  <meta name="description" content="The story behind BulletWork — from hating weekly reports to building an AI tool that writes them in 2 minutes.">
+  <meta property="og:title" content="Blog — The BulletWork Journey">
+  <meta property="og:description" content="The story behind BulletWork — from hating weekly reports to building an AI tool that writes them in 2 minutes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://glq-api.asia/blog.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://glq-api.asia/blog">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2313SB5W9P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2313SB5W9P');
+  </script>
+  <!-- End Google Analytics 4 -->
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a2e;
+      --text-secondary: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f9fafb;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --radius: 12px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* Nav */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-left: 24px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.active { color: var(--accent); font-weight: 600; }
+
+    /* Article */
+    .article-header {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 0;
+    }
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .article-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: #eff6ff;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .article-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .article-body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+    }
+    .article-body h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 40px 0 16px;
+      letter-spacing: -0.3px;
+    }
+    .article-body h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 28px 0 12px;
+    }
+    .article-body p {
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--text); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 18px 24px;
+    }
+    .article-body li {
+      margin-bottom: 8px;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 8px 20px;
+      margin: 24px 0;
+      color: var(--text-secondary);
+      font-style: italic;
+      background: var(--surface);
+      border-radius: 0 8px 8px 0;
+    }
+    .article-body code {
+      font-family: "SF Mono", "Fira Code", Menlo, monospace;
+      font-size: 0.88em;
+      background: var(--surface);
+      padding: 2px 6px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+
+    /* CTA box */
+    .cta-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+      border: 1px solid #bfdbfe;
+      border-radius: var(--radius);
+      padding: 32px 36px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .cta-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: inherit;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: var(--accent-hover); }
+
+    /* Author card */
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 40px 0;
+    }
+    .author-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #fff;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .author-info p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      line-height: 1.6;
+    }
+    .footer a {
+      color: #9ca3af;
+      text-decoration: none;
+    }
+    .footer a:hover { color: var(--text-secondary); }
+
+    @media (max-width: 640px) {
+      .nav { padding: 14px 18px; }
+      .article-header h1 { font-size: 1.7rem; }
+      .article-body { font-size: 1rem; }
+      .cta-box { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-logo">Bullet<span>Work</span></a>
+    <div class="nav-links">
+      <a href="/" >Home</a>
+      <a href="/blog.html" class="active">Blog</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+    </div>
+  </nav>
+
+  <header class="article-header">
+    <span class="article-tag">Story</span>
+    <h1>I Hate Writing Weekly Reports. So I Built an AI That Does It for Me.</h1>
+    <p class="article-subtitle">The BulletWork journey — from a solo founder's frustration to a tool that turns messy notes into professional reports in 2 minutes.</p>
+    <div class="article-meta">
+      <time datetime="2026-05-28">May 28, 2026</time>
+      <span>·</span>
+      <span>8 min read</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p>Every Friday at 4:00 PM, the same dread hit.</p>
+
+    <p>My manager's weekly report email would land in my inbox: "Please submit your weekly report by EOD." I'd stare at a blank document, trying to remember what I even did on Monday. Was it Monday I fixed that bug? Or Wednesday?</p>
+
+    <p>I'd spend 45 minutes writing something that looked like this:</p>
+
+    <blockquote>"This week I worked on the login thing and also had some meetings. Next week I will continue working on stuff."</blockquote>
+
+    <p>It was bad. I knew it was bad. My manager probably knew it was bad. But the truth is, <strong>nobody likes writing weekly reports</strong>. They're a necessary evil—a ritual that eats into your Friday afternoon and makes you question whether anyone actually reads them.</p>
+
+    <h2>The Breaking Point</h2>
+
+    <p>The idea for BulletWork came from a particularly painful Friday. I had a week full of work—user interviews, a critical bug fix, a product roadmap review—but when I sat down to write the report, my brain just... refused.</p>
+
+    <p>I thought: <strong>What if I could just dump my messy thoughts into a box and have AI organize them into something presentable?</strong></p>
+
+    <p>Not a generic ChatGPT prompt. Not a template to fill out. Just... type what you did, hit a button, and get a real report back.</p>
+
+    <p>That night, I started building.</p>
+
+    <h2>Week 1: The Ugly MVP</h2>
+
+    <p>The first version was embarrassingly simple. A single HTML page. A textarea. A "Generate" button. That's it.</p>
+
+    <p>Under the hood, it sent your notes to an AI API with a carefully crafted prompt that organized everything into categories: Accomplishments, In Progress, Challenges, and Next Week. The output was clean, professional English—no markdown, no placeholder text, just a report you could copy and paste straight into an email.</p>
+
+    <p>I used it myself that Friday. It took me <strong>2 minutes</strong> instead of 45. The report actually sounded like a human wrote it—a competent human, even.</p>
+
+    <p>I thought: Okay, this might be useful to more than just me.</p>
+
+    <h2>What Makes BulletWork Different</h2>
+
+    <p>Yes, you can paste your notes into ChatGPT and ask it to write a report. I tried that. Here's what I got back:</p>
+
+    <blockquote>
+      "[Your Name]<br>
+      [Your Department]<br>
+      [Date]<br><br>
+      Dear [Manager],<br><br>
+      I hope this report finds you well..."
+    </blockquote>
+
+    <p>Nobody talks like that. Nobody wants to read that.</p>
+
+    <p>BulletWork is <strong>purpose-built for one thing</strong>: turning your scattered weekly thoughts into a clean, scannable report. Here's what that means in practice:</p>
+
+    <ul>
+      <li><strong>No templates to fill out.</strong> Just type naturally: "Monday I had a product review, Wednesday I fixed the login bug, Friday I did user interviews." That's it.</li>
+      <li><strong>Smart categorization.</strong> BulletWork automatically groups your work into meaningful sections—accomplishments, in-progress items, and next steps.</li>
+      <li><strong>Professional English.</strong> This is especially helpful if English isn't your first language. Your "fixed the login bug that was driving users crazy" becomes "Resolved critical login bug and deployed to production, eliminating a top user complaint."</li>
+      <li><strong>Edit and copy.</strong> Every generated report is fully editable. Tweak it, add your personal touch, and then copy it straight to your clipboard.</li>
+      <li><strong>3 free reports, no credit card.</strong> Try it before you commit. If it saves you 40 minutes a month, the $5/month subscription pays for itself.</li>
+    </ul>
+
+    <h2>The Solo Founder Reality</h2>
+
+    <p>I built BulletWork by myself. No co-founder, no team, no funding. Just me, a laptop, and a lot of Friday nights.</p>
+
+    <p>Here's what the stack looks like:</p>
+
+    <ul>
+      <li><strong>Frontend:</strong> A single HTML file. No React, no build step, no framework. Just HTML, CSS, and vanilla JavaScript.</li>
+      <li><strong>Backend:</strong> Vercel for hosting and API proxying; DeepSeek for the AI model.</li>
+      <li><strong>Payments:</strong> PayPal subscriptions for the paid tier.</li>
+      <li><strong>Analytics:</strong> Google Analytics 4. That's it.</li>
+    </ul>
+
+    <p>It's not fancy. It doesn't need to be. The goal was to build something <strong>useful</strong>, not something impressive.</p>
+
+    <p>The hardest part wasn't the code; it was the prompt engineering. Getting the AI to consistently produce reports that sound natural—not robotic, not overly formal, and not full of corporate jargon—took dozens of iterations. I must have generated 200 test reports before I was happy with the output quality.</p>
+
+    <h2>Who Is This For?</h2>
+
+    <p>BulletWork is for anyone who has to write a weekly report and would rather be doing literally anything else. But it's especially useful for:</p>
+
+    <ul>
+      <li><strong>Engineers</strong> who'd rather code than write.</li>
+      <li><strong>Non-native English speakers</strong> who want polished, professional reports without the language barrier.</li>
+      <li><strong>Managers</strong> who need to submit reports across multiple teams.</li>
+      <li><strong>Freelancers</strong> who need to send weekly updates to clients.</li>
+      <li><strong>Anyone</strong> who's ever typed "I did stuff this week" and felt bad about it.</li>
+    </ul>
+
+    <h2>What's Next</h2>
+
+    <p>BulletWork is just getting started. Here's what I'm working on:</p>
+
+    <ul>
+      <li><strong>Custom report templates:</strong> Different formats for different roles, such as engineering, marketing, sales, and management.</li>
+      <li><strong>Multi-language support:</strong> Write your notes in Chinese and get a report in English (or vice versa).</li>
+      <li><strong>Team dashboards:</strong> Aggregate weekly reports across your team for a bird's-eye view.</li>
+      <li><strong>Slack integration:</strong> Generate your report without leaving Slack.</li>
+    </ul>
+
+    <p>But here's the thing—<strong>I'm building this in public, and I want your input</strong>. If you try BulletWork and it doesn't work for you, tell me. If you have a feature idea, tell me. If you just want to say hi, that's cool too.</p>
+
+    <p>Email me at <a href="mailto:hello@bulletwork.so">hello@bulletwork.so</a>. I read every message.</p>
+
+    <hr>
+
+    <div class="cta-box">
+      <h3>Ready to reclaim your Friday afternoons?</h3>
+      <p>Turn your messy notes into a professional weekly report in 2 minutes. 3 free reports, no credit card required.</p>
+      <a href="/" class="cta-btn">Try BulletWork Free →</a>
+    </div>
+
+    <div class="author-card">
+      <div class="author-avatar">Z</div>
+      <div class="author-info">
+        <h4>Zhen</h4>
+        <p>Solo founder of BulletWork. Built this because I hate writing weekly reports too. Previously worked on product and engineering teams where weekly reports were a way of life.</p>
+      </div>
+    </div>
+
+  </article>
+
+  <footer class="footer">
+    <div class="legal-links">
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/terms.html">Terms of Service</a> ·
+      <a href="/refund.html">Refund Policy</a> ·
+      <a href="https://www.g2.com/products/bulletwork-ai">BulletWork on G2</a>
+    </div>
+    <p>&copy; 2026 BulletWork</p>
+    <p><a href="mailto:hello@bulletwork.so">hello@bulletwork.so</a></p>
+  </footer>
+
+</body>
+</html>

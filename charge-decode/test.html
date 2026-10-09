@@ -1,0 +1,29 @@
+:root{--bg:#fff;--card-bg:#f8f9fa;--text:#333;--heading:#1a1a1a;--accent:#7c3aed}
+*{margin:0}
+body{font-family:Inter;background:var(--bg);color:var(--text)}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.header{padding:20px 0;border-bottom:1px solid var(--border)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:700;color:var(--accent);text-decoration:none}
+.logo span{color:var(--heading)}
+.nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:14px}
+.nav a:hover{color:var(--accent)}
+.article-header{padding:60px 0 40px;border-bottom:1px solid var(--border)}
+.article-header h1{font-size:36px;font-weight:700;color:var(--heading);margin-bottom:12px}
+.article-header .meta{color:var(--muted);font-size:14px}
+.module{margin:40px 0}
+.module h2{font-size:22px;font-weight:600;color:var(--heading);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.module p{margin-bottom:12px}
+.module ul{margin:12px 0;padding-left:24px}
+.module li{margin-bottom:6px}
+.summary-box{background:var(--accent-light);border-left:4px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin:24px 0}
+.summary-box p{margin:0;font-weight:500;color:var(--heading)}
+.scam-alert{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:20px;margin:20px 0}
+.scam-alert h3{color:#dc2626;margin-bottom:8px}
+.scam-alert h3 .icon{margin-right:8px}
+.refund-steps{counter-reset:step}
+.refund-steps .step{counter-increment:step;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;position:relative;padding-left:60px}
+.refund-steps .step::before{content:counter(step);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.refund-steps .step h4{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--heading)}
+.refund-steps .step p{margin:0;font-size:14px}
+.cta-box{background:var(--accent);border-radius:14px;padding:32px;text-align:center;color:#fff;margin:40px 0}

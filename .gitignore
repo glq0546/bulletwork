@@ -1,1 +1,5 @@
 .vercel
+database/
+*.env
+.env.local
+*.key

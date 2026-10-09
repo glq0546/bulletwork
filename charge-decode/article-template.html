@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is [Merchant Name] on My Credit Card Statement? | ChargeDecode</title>
+<meta name="description" content="Learn what [Merchant Name] charges are, whether it is fraud, and how to get a refund. Real user reports and step-by-step guide.">
+<link rel="canonical" href="https://glq-api.asia/charge-decode/article/[merchant-slug]">
+<meta property="og:title" content="What is [Merchant Name] on My Credit Card Statement?">
+<meta property="og:description" content="Learn what [Merchant Name] charges are, whether it is fraud, and how to get a refund.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://glq-api.asia/charge-decode/article/[merchant-slug]">
+<meta property="og:site_name" content="ChargeDecode">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is [Merchant Name] on My Credit Card Statement?">
+<meta name="twitter:description" content="Learn what [Merchant Name] charges are, whether it is fraud, and how to get a refund.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card-bg:#f8f9fa;--text:#333;--heading:#1a1a1a;--accent:#7c3aed;--accent-hover:#6d28d9;--accent-light:#ede9fe;--border:#e0e0e0;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+.container{max-width:800px;margin:0 auto;padding:0 24px}
+.header{padding:20px 0;border-bottom:1px solid var(--border)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:700;color:var(--accent);text-decoration:none}
+.logo span{color:var(--heading)}
+.nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:14px}
+.nav a:hover{color:var(--accent)}
+.article-header{padding:60px 0 40px;border-bottom:1px solid var(--border)}
+.article-header h1{font-size:36px;font-weight:700;color:var(--heading);line-height:1.25;margin-bottom:12px}
+.article-header .meta{color:var(--muted);font-size:14px}
+.module{margin:40px 0}
+.module h2{font-size:22px;font-weight:600;color:var(--heading);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.module p{margin-bottom:12px}
+.module ul{margin:12px 0;padding-left:24px}
+.module li{margin-bottom:6px}
+.summary-box{background:var(--accent-light);border-left:4px solid var(--accent);padding:20px;border-radius:0 8px 8px 0;margin:24px 0}
+.summary-box p{margin:0;font-weight:500;color:var(--heading)}
+.scam-alert{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:20px;margin:20px 0}
+.scam-alert h3{color:#dc2626;margin-bottom:8px}
+.scam-alert h3 .icon{margin-right:8px}
+.refund-steps{counter-reset:step}
+.refund-steps .step{counter-increment:step;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;position:relative;padding-left:60px}
+.refund-steps .step::before{content:counter(step);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.refund-steps .step h4{font-size:16px;font-weight:600;margin-bottom:6px;color:var(--heading)}
+.refund-steps .step p{margin:0;font-size:14px}
+.cta-box{background:var(--accent);border-radius:14px;padding:32px;text-align:center;color:#fff;margin:40px 0}
+.cta-box h3{font-size:22px;margin-bottom:12px}
+.cta-box p{opacity:.9;margin-bottom:20px}
+.cta-box .btn{display:inline-block;background:#fff;color:#7c3aed;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:16px;transition:transform .2s,box-shadow .2s}
+.cta-box .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.cta-box .price{font-size:28px;font-weight:700;margin-bottom:4px}
+.reddit-quote{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.reddit-quote .author{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:8px}
+.reddit-quote p{font-style:italic;margin:0}
+.contact-box{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px;margin:20px 0}
+.contact-box h4{margin-bottom:12px}
+.contact-box p{margin-bottom:6px;font-size:14px}
+.disclaimer{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:20px;margin:40px 0;font-size:13px;color:#92400e}
+.report-link{color:var(--accent);font-size:14px;text-decoration:none}
+.report-link:hover{text-decoration:underline}
+.footer{border-top:1px solid var(--border);padding:32px 0;margin-top:40px;text-align:center;font-size:14px;color:var(--muted)}
+.footer a{color:var(--accent);text-decoration:none;margin:0 12px}
+.footer .disclaimer{margin-top:16px;font-size:12px}
+@media(max-width:640px){.article-header h1{font-size:26px}.module h2{font-size:20px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is [Merchant Name] a legitimate charge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[Merchant Name] is a charge from [Company]. It typically appears when [explanation]. While the merchant is a real business, some users report unauthorized charges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get a refund for [Merchant Name]?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contact [Company] customer service first. If they do not resolve the issue, dispute the charge with your bank within 60 days of the statement date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is [Merchant Name] a scam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[Merchant Name] is not inherently a scam, but some users have reported unauthorized or unexpected charges. Always verify with the merchant directly first."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div style="display:none" class="geo-reference">[GEO data placeholder: City, State, Country, Postal Code, Lat/Long, Timezone, ISP, ASN, Organization]</div>
+<header class="header">
+<div class="container">
+<a href="/charge-decode/" class="logo">Charge<span>Decode</span></a>
+<nav class="nav"><a href="/charge-decode/about.html">About</a><a href="/charge-decode/privacy.html">Privacy</a></nav>
+</div>
+</header>
+<article class="article-header">
+<div class="container">
+<h1>What is [Merchant Name] on My Credit Card Statement?</h1>
+<p class="meta">Last updated: [Date] &middot; 5 min read &middot; By ChargeDecode Team</p>
+</div>
+</article>
+<main class="container">
+<section class="module summary-box">
+<p><strong>Summary:</strong> [Merchant Name] is a legitimate charge from [Company Description]. It appears on your statement when [reason]. If you do not recognize it, follow the refund steps below.</p>
+</section>
+<section class="module">
+<h2>1. Full Name and What It Is</h2>
+<p>The merchant <strong>[Merchant Name]</strong> is associated with [Company Legal Name], a [industry/description] company based in [Location].</p>
+<ul>
+<li><strong>Legal Entity:</strong> [Full Legal Name]</li>
+<li><strong>Industry:</strong> [Industry]</li>
+<li><strong>Headquarters:</strong> [City, State/Country]</li>
+<li><strong>Website:</strong> <a href="https://example.com" target="_blank" rel="noopener">example.com</a></li>
+</ul>
+<p>This charge typically appears when you [describe common transaction scenario].</p>
+</section>
+<section class="module">
+<h2>2. Common Scenarios</h2>
+<p>Here are the most common situations where [Merchant Name] appears on a credit card statement:</p>
+<ul>
+<li><strong>Subscription charge:</strong> Monthly or annual billing for [service]</li>
+<li><strong>Trial conversion:</strong> Free trial that converted to paid</li>
+<li><strong>One-time purchase:</strong> Single transaction for [product/service]</li>
+<li><strong>Family/shared plan:</strong> Charge from a family member or shared account</li>
+<li><strong>App store purchase:</strong> In-app purchase routed through [platform]</li>
+</ul>
+</section>
+<section class="module">
+<h2>3. Is This Fraud? (Is It a Scam?)</h2>
+<div class="scam-alert">
+<h3><span class="icon">&#9888;</span>Important: Read This First</h3>
+<p><strong>[Merchant Name] is generally NOT a scam</strong> &mdash; it is a legitimate business. However, unauthorized charges can occur due to:</p>
+<ul>
+<li>Stored card details being used without permission</li>
+<li>Subscription auto-renewal you forgot about</li>
+<li>A family member making a purchase</li>
+<li>Merchant billing error or duplicate charge</li>
+</ul>
+<p><strong>Red flags that MAY indicate fraud:</strong></p>
+<ul>
+<li>Charge amount does not match any expected transaction</li>
+<li>You have never heard of the merchant</li>
+<li>Multiple unknown charges in a short period</li>
+<li>Charge appears while your card is in your possession (possible card-not-present fraud)</li>
+</ul>
+<p>If you suspect fraud, <strong>contact your bank immediately</strong> to freeze the card.</p>
+</div>
+</section>
+<section class="module">
+<h2>4. Customer Service Contact Info</h2>
+<div class="contact-box">
+<h4>How to Reach [Company]</h4>
+<p><strong>Phone:</strong> [Toll-free number] (Mon-Fri 9am-6pm EST)</p>
+<p><strong>Email:</strong> [support@company.com]</p>
+<p><strong>Live Chat:</strong> Available on their website</p>
+<p><strong>Mailing Address:</strong> [Company Name], [Street Address], [City, State ZIP]</p>
+</div>
+<p><strong>Tip:</strong> When calling, have your credit card statement ready with the exact charge amount and date. This speeds up the process significantly.</p>
+</section>
+<section class="module">
+<h2>5. What Reddit Users Say (Real Discussions)</h2>
+<p>Here are real user reports from Reddit and community forums about [Merchant Name] charges:</p>
+<div class="reddit-quote">
+<p class="author">u/reddit_user_1 &middot; r/personalfinance &middot; 6 months ago</p>
+<p>"I found a charge for $29.99 from [Merchant Name] and had no idea what it was. Turned out my spouse signed up for a subscription using our shared card. Contacted support and got a full refund within 3 business days."</p>
+</div>
+<div class="reddit-quote">
+<p class="author">u/reddit_user_2 &middot; r/creditcards &middot; 1 year ago</p>
+<p>"This is a legitimate charge but the merchant name on the statement is super confusing. I almost disputed it before checking my email and finding the receipt. Always check your email first!"</p>
+</div>
+<div class="reddit-quote">
+<p class="author">u/reddit_user_3 &middot; r/legaladvice &middot; 8 months ago</p>
+<p>"I had an unauthorized charge from [Merchant Name] after a data breach. My bank reversed it immediately once I filed a dispute. Keep an eye on your statements monthly."</p>
+</div>
+</section>
+<section class="module">
+<h2>6. How to Get a Refund: Step-by-Step Guide</h2>
+<p>Follow these steps to resolve an unrecognized or unwanted [Merchant Name] charge:</p>
+<div class="refund-steps">
+<div class="step">
+<h4>Contact the Merchant</h4>
+<p>Call or email [Company] customer service first. Many issues are resolved directly. Explain the charge and request a refund. Keep records of all communication.</p>
+</div>
+<div class="step">
+<h4>Document Everything</h4>
+<p>Save your statement showing the charge, any emails or chat transcripts with the merchant, and note dates/times of calls. This evidence is crucial if you need to escalate.</p>
+</div>
+<div class="step">
+<h4>Dispute with Your Bank</h4>
+<p>If the merchant refuses or is unresponsive, call your credit card issuer. Under the Fair Credit Billing Act (US), you have 60 days from the statement date to dispute a charge.</p>
+</div>
+</div>
+</section>
+<section class="module">
+<h2>7. Get the Complete Refund Guide</h2>
+<div class="cta-box">
+<p class="price">$4.99</p>
+<h3>Complete Refund Guide (PDF)</h3>
+<p>Includes dispute letter templates, bank contact numbers, consumer rights summary, and step-by-step escalation process.</p>
+<a href="/charge-decode/buy-guide.html" class="btn">Get the Guide Now</a>
+</div>
+</section>
+<section class="module">
+<h2>8. Compliance Disclaimer</h2>
+<div class="disclaimer">
+<p><strong>Important:</strong> The information on this page is based on community reports and publicly available data. This is <strong>not financial or legal advice</strong>. Always verify with your bank or a qualified professional. ChargeDecode is not affiliated with any merchant mentioned. We do not guarantee the accuracy of user-submitted content.</p>
+</div>
+</section>
+<section class="module">
+<h2>9. Report an Error</h2>
+<p>Is something wrong on this page? We rely on community feedback to keep our information accurate and up to date.</p>
+<p><a href="/charge-decode/report-error.html?merchant=[merchant-slug]" class="report-link">&#9888; Report incorrect information on this page</a></p>
+</section>
+</main>
+<footer class="footer">
+<div class="container">
+<div><a href="/charge-decode/about.html">About</a><a href="/charge-decode/privacy.html">Privacy Policy</a></div>
+<p class="disclaimer">This site is for educational and informational purposes only and does not constitute formal legal or financial advice. Depending on your location and card issuer, standard dispute rights (such as those under the US Fair Credit Billing Act) may apply, but outcomes depend entirely on your bank and merchant policies. Always verify charges directly with your financial institution.</p>
+<p style="margin-top:12px">&#169; 2026 ChargeDecode. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

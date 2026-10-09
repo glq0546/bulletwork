@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChargeDecode - What Is That Charge on Your Credit Card?</title>
+<meta name="description" content="We decode cryptic merchant names and show you how to get your money back.">
+<link rel="canonical" href="https://glq-api.asia/charge-decode/">
+<meta property="og:title" content="ChargeDecode - Decode Your Credit Card Charges">
+<meta property="og:description" content="Find out what those cryptic merchant names on your credit card statement really mean.">
+<meta property="og:url" content="https://glq-api.asia/charge-decode/">
+<meta property="og:site_name" content="ChargeDecode">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://www.googletagmanager.com https://www.paypal.com; style-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' https: data:; connect-src 'self' https://www.google-analytics.com;">
+<meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card-bg:#f8f9fa;--text:#333;--heading:#1a1a1a;--accent:#7c3aed;--accent-hover:#6d28d9;--accent-light:#ede9fe;--border:#e0e0e0;--muted:#6b7280}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:0 24px}
+.header{padding:20px 0;border-bottom:1px solid var(--border)}
+.header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:700;color:var(--accent);text-decoration:none}
+.logo span{color:var(--heading)}
+.nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:14px;transition:color .2s}
+.nav a:hover{color:var(--accent)}
+.hero{padding:80px 0 60px;text-align:center}
+.hero h1{font-size:42px;font-weight:700;color:var(--heading);margin-bottom:16px;line-height:1.2}
+.hero p{font-size:18px;color:var(--muted);max-width:600px;margin:0 auto 40px}
+.search-wrapper{max-width:560px;margin:0 auto}
+.search-box{display:flex;background:var(--bg);border:2px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.search-box:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
+.search-box input{flex:1;padding:16px 20px;border:none;font-size:16px;font-family:inherit;color:var(--text);background:transparent;outline:none}
+.search-box input::placeholder{color:var(--muted)}
+.search-box button{padding:16px 28px;background:var(--accent);color:#fff;border:none;font-size:16px;font-weight:600;cursor:pointer;transition:background .2s;font-family:inherit}
+.search-box button:hover{background:var(--accent-hover)}
+.section{padding:60px 0}
+.section-title{font-size:24px;font-weight:600;color:var(--heading);margin-bottom:32px;text-align:center}
+.alphabet{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:40px}
+.alphabet a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600;font-size:15px;transition:all .2s}
+.alphabet a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.letter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.letter-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:20px}
+.letter-card .letter{font-size:28px;font-weight:700;color:var(--accent);margin-bottom:12px}
+.letter-card .empty{color:var(--muted);font-size:13px;font-style:italic}
+.footer{border-top:1px solid var(--border);padding:32px 0;margin-top:40px;text-align:center;font-size:14px;color:var(--muted)}
+.footer a{color:var(--accent);text-decoration:none;margin:0 12px}
+.footer a:hover{text-decoration:underline}
+.footer .disclaimer{margin-top:16px;font-size:12px}
+@media(max-width:640px){.hero h1{font-size:28px}.hero p{font-size:16px}.hero{padding:50px 0 40px}.search-box{flex-direction:column}.search-box button{border-radius:0}}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container">
+<a href="/charge-decode/" class="logo">Charge<span>Decode</span></a>
+<nav class="nav"><a href="/charge-decode/about">About</a><a href="/charge-decode/privacy">Privacy</a></nav>
+</div>
+</header>
+<section class="hero">
+<div class="container">
+<h1>What is that charge on your credit card?</h1>
+<p>We decode cryptic merchant names and show you how to get your money back.</p>
+<div class="search-wrapper">
+<form class="search-box" action="/charge-decode/search.html" method="GET">
+<input type="text" name="q" placeholder="Search merchant name (e.g., AMZN Mktp, UBER EATS)..." autocomplete="off">
+<button type="submit">Search</button>
+</form>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<h2 class="section-title">Browse by Letter</h2>
+<div class="alphabet">
+<a href="index.html#A">A</a><a href="index.html#B">B</a><a href="index.html#C">C</a><a href="index.html#D">D</a>
+<a href="index.html#E">E</a><a href="index.html#F">F</a><a href="index.html#G">G</a><a href="index.html#H">H</a>
+<a href="index.html#I">I</a><a href="index.html#J">J</a><a href="index.html#K">K</a><a href="index.html#L">L</a>
+<a href="index.html#M">M</a><a href="index.html#N">N</a><a href="index.html#O">O</a><a href="index.html#P">P</a>
+<a href="index.html#Q">Q</a><a href="index.html#R">R</a><a href="index.html#S">S</a><a href="index.html#T">T</a>
+<a href="index.html#U">U</a><a href="index.html#V">V</a><a href="index.html#W">W</a><a href="index.html#X">X</a>
+<a href="index.html#Y">Y</a><a href="index.html#Z">Z</a>
+</div>
+<div class="letter-grid">
+<div class="letter-card"><div class="letter">A</div><a href="/charge-decode/pages/aplprinces">APLPRINCES — Apple iCloud / App Store</a><br><a href="/charge-decode/pages/amzn-mktp">What is AMZN MKTP?</a><br><a href="/charge-decode/pages/adobe-cc">ADOBE CREATIVE CLOUD — Adobe Subscription</a></div>
+<div class="letter-card"><div class="letter">B</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">C</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">D</div><a href="/charge-decode/pages/dri">DRI* — Digital River Payment</a><br><a href="/charge-decode/pages/dri-avast">DRI*AVAST SOFTWARE — Avast Antivirus Renewal</a></div>
+<div class="letter-card"><div class="letter">E</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">F</div><a href="/charge-decode/pages/foreign-transaction-fee">FOREIGN TRANSACTION FEE — Bank International Fee</a></div>
+<div class="letter-card"><div class="letter">G</div><a href="/charge-decode/pages/google-temp-hold">What is GOOGLE *TEMPORARY HOLD?</a><br><a href="/charge-decode/pages/youtube-premium">GOOGLE *YOUTUBE — YouTube Premium</a><br><a href="/charge-decode/pages/godaddy">GODADDY.COM — GoDaddy Domain / Hosting</a></div>
+<div class="letter-card"><div class="letter">H</div><a href="/charge-decode/pages/hulu">HULU.COM — Hulu Streaming</a></div>
+<div class="letter-card"><div class="letter">I</div><a href="/charge-decode/pages/intuit-qb">What is INTUIT *QB?</a></div>
+<div class="letter-card"><div class="letter">J</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">K</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">L</div><a href="/charge-decode/pages/linkedin-premium">LINKEDIN PREMIUM — LinkedIn Subscription</a></div>
+<div class="letter-card"><div class="letter">M</div><a href="/charge-decode/pages/msft-charge">What is MSFT *?</a><br><a href="/charge-decode/pages/microsoft365">MICROSOFT*365 — Microsoft 365 Subscription</a></div>
+<div class="letter-card"><div class="letter">N</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">O</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">P</div><a href="/charge-decode/pages/pypl">PYPL — PayPal Payment</a><br><a href="/charge-decode/pages/pos-debit">POS DEBIT — Point of Sale Transaction</a><br><a href="/charge-decode/pages/paypal-netflix">PAYPAL *NETFLIX — Netflix via PayPal</a></div>
+<div class="letter-card"><div class="letter">Q</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">R</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">S</div><a href="/charge-decode/pages/sq-charge">What is SQ *?</a><br><a href="/charge-decode/pages/spotify-usa">SPOTIFY USA — Spotify Premium</a></div>
+<div class="letter-card"><div class="letter">T</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">U</div><a href="/charge-decode/pages/uber-trip">UBER TRIP — Uber Ride / Eats Delivery</a></div>
+<div class="letter-card"><div class="letter">V</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">W</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">X</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">Y</div><div class="empty">Coming soon...</div></div>
+<div class="letter-card"><div class="letter">Z</div><div class="empty">Coming soon...</div></div>
+</div>
+</div>
+</section>
+
+<!-- 付费引导区块 -->
+<div style="max-width:600px; margin:2rem auto; padding:20px; background:linear-gradient(135deg, #a855f7, #7c3aed); border-radius:12px; text-align:center; color:#fff;">
+  <h3 style="margin:0 0 8px; font-size:1.2rem;">📘 Get the Complete Credit Card Refund Guide</h3>
+  <p style="margin:0 0 14px; opacity:0.9;">Step-by-step dispute templates for every major bank.</p>
+  <span style="font-size:1.8rem; font-weight:700;">$4.99</span>
+  <span style="opacity:0.8;">(PDF)</span>
+  <br>
+  <a href="#" style="display:inline-block; margin-top:10px; padding:10px 24px; background:#fff; color:#7c3aed; border-radius:8px; font-weight:600; text-decoration:none;">Download Now →</a>
+</div>
+
+<footer class="footer">
+<div class="container">
+<div><a href="/charge-decode/about">About</a><a href="/charge-decode/privacy">Privacy Policy</a><a href="/charge-decode/sitemap-page">Site Map</a></div>
+<p class="disclaimer">This site is for educational and informational purposes only and does not constitute formal legal or financial advice. Depending on your location and card issuer, standard dispute rights (such as those under the US Fair Credit Billing Act) may apply, but outcomes depend entirely on your bank and merchant policies. Always verify charges directly with your financial institution.</p>
+<p style="margin-top:12px">&#169; 2026 ChargeDecode. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

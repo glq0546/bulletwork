@@ -1,18 +1,88 @@
 {
-  "rewrites": [
-    {
-      "source": "/deepseek/:path*",
-      "destination": "https://glq-api.asia/deepseek/:path*"
-    }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/dri-adobe", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
+    { "source": "/charge-decode/pages/dri-adobe", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
+
+    { "source": "/apple-com-bill", "destination": "/charge-decode/pages/apl-itunes-com-bill", "permanent": true },
+    { "source": "/charge-decode/pages/apple-com-bill", "destination": "/charge-decode/pages/apl-itunes-com-bill", "permanent": true },
+    { "source": "/charge-decode/pages/apple", "destination": "/charge-decode/pages/apl-itunes-com-bill", "permanent": true },
+    { "source": "/charge-decode/pages/apple-itunes", "destination": "/charge-decode/pages/apl-itunes-com-bill", "permanent": true },
+    { "source": "/charge-decode/pages/itunes", "destination": "/charge-decode/pages/apl-itunes-com-bill", "permanent": true },
+    { "source": "/charge-decode/pages/apple-princess", "destination": "/charge-decode/pages/aplprinces", "permanent": true },
+
+    { "source": "/charge-decode/pages/amazon", "destination": "/charge-decode/pages/amzn-mktp", "permanent": true },
+    { "source": "/charge-decode/pages/amazon-mktp", "destination": "/charge-decode/pages/amzn-mktp", "permanent": true },
+    { "source": "/charge-decode/pages/amazon-marketplace", "destination": "/charge-decode/pages/amzn-mktp", "permanent": true },
+
+    { "source": "/charge-decode/pages/paypal", "destination": "/charge-decode/pages/pypl", "permanent": true },
+    { "source": "/charge-decode/pages/paypal-charge", "destination": "/charge-decode/pages/pypl", "permanent": true },
+
+    { "source": "/charge-decode/pages/microsoft", "destination": "/charge-decode/pages/msft-charge", "permanent": true },
+    { "source": "/charge-decode/pages/microsoft-charge", "destination": "/charge-decode/pages/msft-charge", "permanent": true },
+    { "source": "/charge-decode/pages/xbox", "destination": "/charge-decode/pages/msft-xbox-game-pass", "permanent": true },
+    { "source": "/charge-decode/pages/xbox-game-pass", "destination": "/charge-decode/pages/msft-xbox-game-pass", "permanent": true },
+
+    { "source": "/charge-decode/pages/square", "destination": "/charge-decode/pages/sq-charge", "permanent": true },
+    { "source": "/charge-decode/pages/square-charge", "destination": "/charge-decode/pages/sq-charge", "permanent": true },
+
+    { "source": "/charge-decode/pages/adobe", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
+    { "source": "/charge-decode/pages/adobe-creative-cloud", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
+
+    { "source": "/charge-decode/pages/avast", "destination": "/charge-decode/pages/dri-avast", "permanent": true },
+    { "source": "/charge-decode/pages/panda-security", "destination": "/charge-decode/pages/dri-pandasecurity", "permanent": true },
+    { "source": "/charge-decode/pages/pandasecurity", "destination": "/charge-decode/pages/dri-pandasecurity", "permanent": true },
+
+    { "source": "/charge-decode/pages/spotify", "destination": "/charge-decode/pages/spotify-usa", "permanent": true },
+    { "source": "/charge-decode/pages/youtube", "destination": "/charge-decode/pages/youtube-premium", "permanent": true },
+    { "source": "/charge-decode/pages/uber", "destination": "/charge-decode/pages/uber-trip", "permanent": true },
+    { "source": "/charge-decode/pages/netflix", "destination": "/charge-decode/pages/paypal-netflix", "permanent": true },
+    { "source": "/charge-decode/pages/max", "destination": "/charge-decode/pages/help-max-com", "permanent": true },
+    { "source": "/charge-decode/pages/hbo-max", "destination": "/charge-decode/pages/help-max-com", "permanent": true },
+    { "source": "/charge-decode/pages/quickbooks", "destination": "/charge-decode/pages/intuit-qb", "permanent": true },
+    { "source": "/charge-decode/pages/intuit", "destination": "/charge-decode/pages/intuit-qb", "permanent": true },
+    { "source": "/charge-decode/pages/linkedin", "destination": "/charge-decode/pages/linkedin-premium", "permanent": true },
+    { "source": "/charge-decode/pages/zoom", "destination": "/charge-decode/pages/zoom-us", "permanent": true },
+    { "source": "/charge-decode/pages/nyt", "destination": "/charge-decode/pages/nytimes", "permanent": true },
+    { "source": "/charge-decode/pages/new-york-times", "destination": "/charge-decode/pages/nytimes", "permanent": true },
+    { "source": "/charge-decode/pages/paddle", "destination": "/charge-decode/pages/paddle-net-paddle-com", "permanent": true },
+    { "source": "/charge-decode/pages/wordpress", "destination": "/charge-decode/pages/wp-wordpress-woocommerce", "permanent": true },
+    { "source": "/charge-decode/pages/woocommerce", "destination": "/charge-decode/pages/wp-wordpress-woocommerce", "permanent": true },
+    { "source": "/charge-decode/pages/bill", "destination": "/charge-decode/pages/bill-com", "permanent": true },
+    { "source": "/charge-decode/pages/microsoft-365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
+    { "source": "/charge-decode/pages/office-365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
+    { "source": "/charge-decode/pages/office365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
+    { "source": "/pages/microsoft365.html", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
+    { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365", "permanent": true }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.paypal.com https://www.paypalobjects.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.glq-api.asia https://www.google-analytics.com https://www.paypal.com; frame-src https://www.paypal.com; object-src 'none'"
+        },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' https://www.paypal.com https://www.paypalobjects.com; style-src 'self' 'unsafe-inline'; frame-src https://www.paypal.com; connect-src 'self' https://api.glq-api.asia" }
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.xml$",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" },
+        { "key": "X-Robots-Tag", "value": "index, follow" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html$",
+      "headers": [
+        { "key": "Content-Type", "value": "text/html; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "index, follow" }
       ]
     }
   ]
