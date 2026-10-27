@@ -48,6 +48,30 @@
             "@type": "Answer",
             "text": "Your bank still charges the fee if the merchant processes the payment outside the US. The currency used does not matter, only the location of the payment processor."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "What does txn fee mean?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TXN is shorthand for transaction, so TXN FEE on a statement means your bank charged you for processing a transaction rather than for buying anything. The usual examples are foreign transaction fees, cash advance fees, balance transfer fees and late payment fees. Read the line directly above it: the purchase or withdrawal sitting next to the fee is the one that triggered the charge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my credit card have international fees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Open your cardholder agreement or the fee schedule page on your issuer's website and look for a line named foreign transaction fee or cross-border fee; you can also call the number on the back of the card. Most everyday and store cards charge around 3%, while premium travel cards are usually marketed as having no foreign transaction fee. Debit cards and international ATM withdrawals follow a separate schedule, so a waived card fee does not mean free ATM use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a foreign transaction fee?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A foreign transaction fee is a surcharge your card issuer adds whenever a purchase crosses borders: the merchant is based abroad, the payment is routed through a foreign processor, or the charge settles in a currency other than your account currency. In the US it is commonly 3% of the amount. It stacks on top of any dynamic currency conversion markup a merchant adds when it offers to charge you in dollars, so a single overseas payment can carry two separate markups."
+          }
         }
       ]
     }
@@ -82,7 +106,7 @@
       "author": { "@type": "Organization", "name": "ChargeDecode" },
       "publisher": { "@type": "Organization", "name": "ChargeDecode", "logo": { "@type": "ImageObject", "url": "https://glq-api.asia/charge-decode/logo.png" } },
       "datePublished": "2026-06-07",
-      "dateModified": "2026-06-08",
+      "dateModified": "2026-10-28",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://glq-api.asia/charge-decode/pages/foreign-transaction-fee" }
     }
     </script>
@@ -139,13 +163,7 @@
             </h1>
         </section>
 
-        <section class="mb-12">
-            <div class="bg-light-100 rounded-2xl border border-accent-600/30 p-6">
-                <p class="text-gray-700 text-lg">
-                    This is not a merchant charge, but an extra fee from your bank for buying from a foreign business, usually 1% to 3% of the transaction amount.
-                </p>
-            </div>
-        </section>
+        <section class="mb-12"><blockquote style="border-left:4px solid #9333ea;padding:1.25rem 1.5rem;margin:0 0 1.5rem 0;background:#faf5ff;border-radius:0.75rem;font-size:1.05rem;line-height:1.7;"><strong style="color:#7e22ce;">Quick Answer:</strong> An <strong>international service fee</strong>, listed as a <strong>foreign transaction fee</strong> on a bank statement, is a surcharge your card issuer adds when a purchase is processed outside your home country or settled in a foreign currency. It typically costs <strong>1% to 3%</strong> of the transaction, appears as its own line item, and is set by <strong>your bank, not the merchant</strong>. Paying in US dollars does not avoid it if the payment processor sits overseas.</blockquote></section>
 
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Full Name & What It Is</h2>
@@ -243,11 +261,29 @@
         </section>
 
         <section class="mb-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Extended FAQ &mdash; International Fees</h2>
+            <div class="space-y-3">
+                <details class="bg-light-100 rounded-xl p-5">
+                    <summary class="font-semibold text-gray-900 cursor-pointer">What does txn fee mean?</summary>
+                    <p class="text-gray-600 mt-3">TXN is shorthand for transaction, so TXN FEE on a statement means your bank charged you for processing a transaction rather than for buying anything. The usual examples are foreign transaction fees, cash advance fees, balance transfer fees and late payment fees. Read the line directly above it: the purchase or withdrawal sitting next to the fee is the one that triggered the charge.</p>
+                </details>
+                <details class="bg-light-100 rounded-xl p-5">
+                    <summary class="font-semibold text-gray-900 cursor-pointer">Does my credit card have international fees?</summary>
+                    <p class="text-gray-600 mt-3">Open your cardholder agreement or the fee schedule page on your issuer's website and look for a line named foreign transaction fee or cross-border fee; you can also call the number on the back of the card. Most everyday and store cards charge around 3%, while premium travel cards are usually marketed as having no foreign transaction fee. Debit cards and international ATM withdrawals follow a separate schedule, so a waived card fee does not mean free ATM use.</p>
+                </details>
+                <details class="bg-light-100 rounded-xl p-5">
+                    <summary class="font-semibold text-gray-900 cursor-pointer">What is a foreign transaction fee?</summary>
+                    <p class="text-gray-600 mt-3">A foreign transaction fee is a surcharge your card issuer adds whenever a purchase crosses borders: the merchant is based abroad, the payment is routed through a foreign processor, or the charge settles in a currency other than your account currency. In the US it is commonly 3% of the amount. It stacks on top of any dynamic currency conversion markup a merchant adds when it offers to charge you in dollars, so a single overseas payment can carry two separate markups.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="mb-12">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
             <div class="space-y-2">
                 <a href="https://glq-api.asia/charge-decode/pages/uber-trip" class="block text-accent-600 hover:text-accent-700">What is UBER TRIP on my credit card statement?</a>
-                <a href="godaddy" class="block text-accent-600 hover:text-accent-700">What is GODADDY.COM on my credit card statement?</a>
-                <a href="pos-debit" class="block text-accent-600 hover:text-accent-700">What is POS DEBIT on my credit card statement?</a>
+                <a href="https://glq-api.asia/charge-decode/pages/godaddy" class="block text-accent-600 hover:text-accent-700">What is GODADDY.COM on my credit card statement?</a>
+                <a href="https://glq-api.asia/charge-decode/pages/pos-debit" class="block text-accent-600 hover:text-accent-700">What is POS DEBIT on my credit card statement?</a>
             </div>
         </section>
 
@@ -301,7 +337,7 @@
     Geographic scope: for credit card users in the United States and Canada.
     Reviewed against: Verified Banking Fee Directory and consumer protection guidelines.
     Source: ChargeDecode (https://glq-api.asia/charge-decode/)
-    Last updated: 2026-06-07.
+    Last updated: 2026-10-28.
     </div>
 
 </body>
