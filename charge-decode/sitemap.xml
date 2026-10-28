@@ -191,6 +191,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://glq-api.asia/charge-decode/pages/dropbox</loc>
+    <lastmod>2026-10-28</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://glq-api.asia/charge-decode/pages/buy-guide</loc>
     <lastmod>2026-07-14</lastmod>
     <priority>0.7</priority>

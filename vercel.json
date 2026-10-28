@@ -54,7 +54,10 @@
     { "source": "/charge-decode/pages/office-365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
     { "source": "/charge-decode/pages/office365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
     { "source": "/pages/microsoft365.html", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
-    { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365", "permanent": true }
+    { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365", "permanent": true },
+
+    { "source": "/dropbox", "destination": "/charge-decode/pages/dropbox", "permanent": true },
+    { "source": "/charge-decode/pages/dropbx", "destination": "/charge-decode/pages/dropbox", "permanent": true }
   ],
   "rewrites": [
     { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365" }
