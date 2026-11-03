@@ -22,9 +22,10 @@
     <div style="display:none;" aria-hidden="true">
     This article explains the MSFT * merchant code on credit card statements.
     Data sourced from: Microsoft Corporation official documentation, community reports from Reddit, and verified merchant billing codes.
-    Geographic scope: for credit card users in the United States and Canada.
+    Geographic scope: for credit card users in the United States, Canada, and the United Kingdom.
+    UK note: charges described as "MSFT * READING GB" are billed by Microsoft's Reading, England billing center.
     Source: ChargeDecode (https://glq-api.asia/charge-decode/)
-    Last updated: 2026-06-08.
+    Last updated: 2026-11-03.
     </div>
 
     <script type="application/ld+json">
@@ -32,6 +33,14 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does my bank statement say \"READING GB\"?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "\"Reading GB\" stands for Reading, Great Britain (a town in England). Microsoft uses a billing center in Reading for UK-based Microsoft 365, Xbox, or OneDrive subscriptions. It is not a fraudulent charge, but a standard recurring subscription."
+          }
+        },
         {
           "@type": "Question",
           "name": "Why is Microsoft charging my credit card?",
@@ -89,7 +98,7 @@
       "author": { "@type": "Organization", "name": "ChargeDecode" },
       "publisher": { "@type": "Organization", "name": "ChargeDecode", "logo": { "@type": "ImageObject", "url": "https://glq-api.asia/charge-decode/logo.png" } },
       "datePublished": "2026-06-08",
-      "dateModified": "2026-11-02",
+      "dateModified": "2026-11-03",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://glq-api.asia/charge-decode/pages/msft-charge" }
     }
     </script>
@@ -145,6 +154,10 @@
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 Microsoft Subscription <span class="text-accent-600">Reading GB</span> on Bank Statement?
             </h1>
+            <div class="bg-blue-50 rounded-2xl border border-blue-200 p-6 mt-6">
+                <p class="text-blue-800 font-semibold text-lg mb-2">Notice for UK users</p>
+                <p class="text-gray-700"><strong>"READING GB"</strong> on your statement refers to Microsoft's billing center in Reading, England. It is a legitimate recurring charge.</p>
+            </div>
         </section>
 
         <section class="mb-12">
@@ -198,6 +211,9 @@
                     <p class="text-sm text-gray-500 mt-1">Sign in → Services & Subscriptions</p>
                 </div>
             </div>
+            <div class="bg-blue-50 rounded-xl border border-blue-200 p-5 mt-4">
+                <p class="text-gray-700 text-sm"><strong>UK customers:</strong> For UK users, please visit your <a href="https://account.microsoft.com/services" class="text-accent-600 hover:text-accent-700 font-medium">Microsoft account subscriptions page</a> to manage or cancel this plan. Charges shown as <strong>MSFT * READING GB</strong> are billed from Microsoft's Reading, England billing center, so the US phone line above is not the fastest route for UK accounts.</p>
+            </div>
         </section>
 
         <section class="mb-12">
@@ -230,6 +246,10 @@
         <section class="mb-12">
             <h2 class="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
             <div class="space-y-3">
+                <details class="bg-light-100 rounded-xl p-5" open>
+                    <summary class="font-semibold text-gray-900">Why does my bank statement say "READING GB"?</summary>
+                    <p class="text-gray-600 mt-3">"Reading GB" stands for Reading, Great Britain (a town in England). Microsoft uses a billing center in Reading for UK-based Microsoft 365, Xbox, or OneDrive subscriptions. It is not a fraudulent charge, but a standard recurring subscription.</p>
+                </details>
                 <details class="bg-light-100 rounded-xl p-5">
                     <summary class="font-semibold text-gray-900">Why is Microsoft charging my credit card?</summary>
                     <p class="text-gray-600 mt-3">This usually happens due to an active, auto-renewing subscription like Microsoft 365 or OneDrive. It can also be a purchase made through the Windows Store by you or a family member. You can check your full purchase history by signing in to account.microsoft.com.</p>
