@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.glq-api.asia" }], "destination": "https://glq-api.asia/$1", "permanent": true },
     { "source": "/dri-adobe", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
     { "source": "/charge-decode/pages/dri-adobe", "destination": "/charge-decode/pages/adobe-cc", "permanent": true },
 
@@ -58,9 +59,6 @@
 
     { "source": "/dropbox", "destination": "/charge-decode/pages/dropbox", "permanent": true },
     { "source": "/charge-decode/pages/dropbx", "destination": "/charge-decode/pages/dropbox", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/pages/microsoft365", "destination": "/charge-decode/pages/microsoft365" }
   ],
   "headers": [
     {

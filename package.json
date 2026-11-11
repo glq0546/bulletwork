@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "check:jsonld": "node tools/check-jsonld.mjs",
+    "audit:seo": "node tools/audit-seo.mjs",
+    "audit:links": "node tools/audit-links.mjs"
+  },
   "dependencies": {
     "https-proxy-agent": "^9.1.0"
   }

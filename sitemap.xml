@@ -4,6 +4,21 @@
     <loc>https://glq-api.asia/</loc>
   </url>
   <url>
+    <loc>https://glq-api.asia/charge-decode</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://glq-api.asia/charge-decode/about</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://glq-api.asia/charge-decode/privacy</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://glq-api.asia/blog</loc>
+  </url>
+  <url>
     <loc>https://glq-api.asia/privacy</loc>
   </url>
   <url>
@@ -30,6 +45,9 @@
   <url>
     <loc>https://glq-api.asia/blog/i-hate-writing-weekly-reports-automate</loc>
     <lastmod>2026-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://glq-api.asia/blog/recover-hidden-subscriptions</loc>
   </url>
   <url>
     <loc>https://glq-api.asia/charge-decode/pages/adobe-cc</loc>
@@ -65,6 +83,10 @@
   </url>
   <url>
     <loc>https://glq-api.asia/charge-decode/pages/dri-pandasecurity</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://glq-api.asia/charge-decode/pages/dropbox</loc>
     <lastmod>2026-07-14</lastmod>
   </url>
   <url>
